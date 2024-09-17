@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import notificationSlice from "./slices/notificationSlice";
 import authSlice from "./slices/authSlice";
 import { baseApi } from "./api/baseApi";
+import mobileSidebarSlice from "./slices/mobileSidebarSlice";
 
 const persistConfig = {
   key: "root",
@@ -15,6 +16,7 @@ export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     notification: notificationSlice,
+    mobileSidebar: mobileSidebarSlice,
     [baseApi.reducerPath]: baseApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

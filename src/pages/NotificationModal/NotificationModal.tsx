@@ -56,7 +56,7 @@ export default function NotificationModal() {
   const filteredNotifications = filterNotifications([]);
 
   return (
-    <div onClick={(e)=>e.stopPropagation()} className="absolute md:p-[1.5rem] p-3 border-[1px] border-gray-100 rounded-[10px] top-[4.5rem] right-14 shadow-lg z-40 md:w-[25rem] w-[18rem] bg-white select-none">
+    <div onClick={(e)=>e.stopPropagation()} className="absolute md:p-[1.5rem] p-3 border-[1px] border-gray-100 rounded-[10px] md:top-[4.5rem] top-[4rem] md:right-14 right-1 shadow-lg z-40 md:w-[25rem] w-[18rem] bg-white select-none">
       {/* Header  */}
       <div className="flex justify-between items-center">
         <h3 className="md:text-[1.5rem] italic font-bold">Notification</h3>

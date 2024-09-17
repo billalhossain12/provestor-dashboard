@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Header from "../shared/headers/Header";
-import Sidebar from "../shared/sidebars/Sidebar";
+import HeaderWrapper from "../shared/headers/HeaderWrapper";
+import SidebarWrapper from "../shared/sidebars/SidebarWrapper";
 
 export default function MainLayout() {
   return (
     <main>
-        <Header/>
+        <HeaderWrapper/>
        <section className="flex">
-       <Sidebar/>
-       <div className="mt-[6.6rem] ml-[2rem]">
+       <SidebarWrapper/>
+       <div className="md:mt-[6.6rem] mt-[9rem] ml-[2rem]">
         <Outlet/>
        </div>
        </section>
