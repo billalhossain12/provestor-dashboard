@@ -5,21 +5,25 @@ import Investors from '../pages/Investors/Investors';
 import Property from '../pages/Property/Property';
 import Contact from '../pages/Contact/Contact';
 import Reports from '../pages/Reports/Reports';
-import Notifications from '../pages/Notifications/Notifications';
 import Careers from '../pages/Careers/Careers';
 import Values from '../pages/Values/Values';
 import Settings from '../pages/Settings/Settings';
 import ChatSupport from '../pages/ChatSupport/ChatSupport';
 import FAQ from '../pages/FAQ/FAQ';
 import Archives from '../pages/Archives/Archives';
+import Notifications from '../pages/Notifications/Notifications';
 
 export const router = createBrowserRouter([
 	{
-		path: '/admin',
+		path: '/',
 		element: <MainLayout />,
 		children: [
 			{
 				path: '',
+				element: <Dashboard />,
+			},
+			{
+				path: 'admin',
 				element: <Dashboard />,
 			},
 			{
