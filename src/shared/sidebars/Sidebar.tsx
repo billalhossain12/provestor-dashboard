@@ -8,7 +8,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="/admin"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -19,7 +19,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="investors"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -30,7 +30,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="property"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -41,18 +41,21 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="contact"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
-						<Icon className="text-[1.5rem]" icon="material-symbols:contact-mail" />
+						<Icon
+							className="text-[1.5rem]"
+							icon="material-symbols:contact-mail"
+						/>
 						<span>Contact</span>
 					</NavLink>
 				</li>
 				<li>
 					<NavLink
 						to="reports"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -63,7 +66,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="notifications"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -77,7 +80,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="careers"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -91,7 +94,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="values"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -105,7 +108,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="settings"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -116,7 +119,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="chat-support"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -130,7 +133,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="faq"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
@@ -141,7 +144,7 @@ export default function Sidebar() {
 				<li>
 					<NavLink
 						to="archives"
-						className="flex items-center gap-[1rem] p-[0.75rem]"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
 						end
 					>
