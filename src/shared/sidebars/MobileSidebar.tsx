@@ -11,11 +11,11 @@ export default function MobileSidebar() {
 	};
 	return (
 		<aside
-			className={` bg-white w-[17.44rem] absolute shadow-custom px-[1.5rem] duration-500 ${
+			className={` bg-white z-50 w-[17.44rem] fixed shadow-custom px-[1.5rem] duration-500 h-screen overflow-y-auto pb-[5rem] leftSideBar ${
 				showMobileSidebar ? 'left-0' : 'left-[-900px]'
 			}`}
 		>
-			<div className="fixed w-[15rem] bg-white">
+			<div className="fixed w-[15rem] bg-white z-0">
 				<div className="flex justify-end mt-5">
 					<Icon
 						onClick={handleSidebarToggle}
@@ -30,7 +30,7 @@ export default function MobileSidebar() {
 				</Link>
 			</div>
 
-			<div className="h-screen overflow-y-auto pb-[5rem] leftSideBar pt-[10rem]">
+			<div className="pt-[10rem]">
 				<ul className="space-y-[2rem]">
 					<li>
 						<NavLink

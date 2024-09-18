@@ -1,5 +1,10 @@
+import DashboardOverView from "./DashboardOverView/DashboardOverView";
+
+
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <main>
+      <DashboardOverView/>
+    </main>
   )
 }

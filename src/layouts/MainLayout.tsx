@@ -8,7 +8,7 @@ export default function MainLayout() {
         <HeaderWrapper/>
        <section className="flex">
        <SidebarWrapper/>
-       <div className="md:mt-[6.6rem] mt-[9rem] ml-[2rem]">
+       <div className="md:mt-[6rem] mt-[8.2rem] md:ml-[19.44rem] ml-[1rem] md:mr-[2rem] mr-[1rem] flex-1">
         <Outlet/>
        </div>
        </section>
