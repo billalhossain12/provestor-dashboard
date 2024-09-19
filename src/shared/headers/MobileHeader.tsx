@@ -10,7 +10,7 @@ export default function MobileHeader() {
 	const dispatch = useAppDispatch();
 	const { showNotificationModal } = useAppSelector(state => state.notification);
 	return (
-		<header className="bg-white shadow-custom fixed w-full px-[1rem] pt-[0.8rem] md:hidden">
+		<header className="bg-white shadow-custom fixed w-full px-[1rem] pt-[0.8rem] md:hidden z-50">
 			<div className="flex justify-between items-center">
 				<div className="bg-primary  text-white cursor-pointer select-none flex items-center justify-center">
 				<Icon onClick={()=>dispatch(toggleMobileSidebar())} className='text-[2rem] cursor-pointer' icon="material-symbols:menu" />

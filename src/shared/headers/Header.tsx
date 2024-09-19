@@ -9,7 +9,7 @@ export default function Header() {
 	const dispatch = useAppDispatch();
 	const { showNotificationModal } = useAppSelector(state => state.notification);
 	return (
-		<header className="bg-white shadow-custom fixed z-50 w-full px-[3rem] py-[0.5rem] md:flex hidden items-center">
+		<header className="bg-white shadow-custom fixed top-0 z-50 w-full px-[3rem] py-[0.5rem] md:flex hidden items-center">
 			<Link to="/admin">
 				<h3 className="text-[2rem] font-bold text-primary">Provestor</h3>
 			</Link>
