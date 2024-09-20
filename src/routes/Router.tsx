@@ -15,6 +15,9 @@ import Notifications from '../pages/Notifications/Notifications';
 import CareerPanel from '../pages/Careers/CareerPanel';
 import AddCareerForm from '../pages/Careers/AddCareerForm/AddCareerForm';
 import CareerView from '../pages/Careers/CareerView/CareerView';
+import FaqPanel from '../pages/FAQ/FaqPanel';
+import EditFaqForm from '../pages/FAQ/EditFaqForm/EditFaqForm';
+import AddFaqForm from '../pages/FAQ/AddFaqForm/AddFaqForm';
 
 export const router = createBrowserRouter([
 	{
@@ -82,6 +85,16 @@ export const router = createBrowserRouter([
 			{
 				path: 'faq',
 				element: <FAQ />,
+				children:[
+					{
+						path:'',
+						element:<AddFaqForm/>
+					},
+					{
+						path:':54365654',
+						element:<EditFaqForm/>
+					},
+				]
 			},
 			{
 				path: 'archives',

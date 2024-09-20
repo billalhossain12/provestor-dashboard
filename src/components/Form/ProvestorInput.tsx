@@ -5,7 +5,7 @@ import { useFormContext } from 'react-hook-form';
 type TInputProps = {
 	type: string;
 	name: string;
-	label: string;
+	label?: string;
 	placeholder?:string;
 	required?: boolean;
 	readonly?: boolean;

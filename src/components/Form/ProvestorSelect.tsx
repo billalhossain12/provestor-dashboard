@@ -11,7 +11,7 @@ type TOptions = {
 
 type TProvestorSelectProps = {
 	name: string;
-	label: string;
+	label?: string;
 	options: TOptions[];
 	placeholder?: string;
 	required?: boolean;
