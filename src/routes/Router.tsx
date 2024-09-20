@@ -14,6 +14,7 @@ import Archives from '../pages/Archives/Archives';
 import Notifications from '../pages/Notifications/Notifications';
 import CareerPanel from '../pages/Careers/CareerPanel';
 import AddCareerForm from '../pages/Careers/AddCareerForm/AddCareerForm';
+import CareerView from '../pages/Careers/CareerView/CareerView';
 
 export const router = createBrowserRouter([
 	{
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
 					{
 						path:"add-career",
 						element:<AddCareerForm/>
+					},
+					{
+						path:":careerId",
+						element:<CareerView/>
 					},
 				]
 			},

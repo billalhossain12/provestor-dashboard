@@ -3,15 +3,16 @@ import DataTable, {
 	TableColumn,
 	TableStyles,
 } from 'react-data-table-component';
+import { Link } from 'react-router-dom';
 
 type TDataRow = {
-	careerId:number;
-	title:string;
-	description:string;
-	location:string;
-	type:string;
-	date:string;
-	status:string;
+	careerId: number;
+	title: string;
+	description: string;
+	location: string;
+	type: string;
+	date: string;
+	status: string;
 };
 
 const customStyles: TableStyles = {
@@ -70,97 +71,101 @@ const customStyles: TableStyles = {
 
 const data = [
 	{
-	  careerId: 546365365465,
-	  title: "Software Engineer",
-	  description: "Responsible for developing and maintaining web applications.",
-	  location: "New York, USA",
-	  type: "Full-Time",
-	  date: "2024-09-01",
-	  status: "Open",
+		careerId: 546365365465,
+		title: 'Software Engineer',
+		description: 'Responsible for developing and maintaining web applications.',
+		location: 'New York, USA',
+		type: 'Full-Time',
+		date: '2024-09-01',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365466,
-	  title: "Data Analyst",
-	  description: "Analyze data sets to provide insights for business decisions.",
-	  location: "San Francisco, USA",
-	  type: "Contract",
-	  date: "2024-08-25",
-	  status: "Open",
+		careerId: 546365365466,
+		title: 'Data Analyst',
+		description:
+			'Analyze data sets to provide insights for business decisions.',
+		location: 'San Francisco, USA',
+		type: 'Contract',
+		date: '2024-08-25',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365467,
-	  title: "Project Manager",
-	  description: "Manage software development projects and teams.",
-	  location: "London, UK",
-	  type: "Full-Time",
-	  date: "2024-09-05",
-	  status: "Closed",
+		careerId: 546365365467,
+		title: 'Project Manager',
+		description: 'Manage software development projects and teams.',
+		location: 'London, UK',
+		type: 'Full-Time',
+		date: '2024-09-05',
+		status: 'Closed',
 	},
 	{
-	  careerId: 546365365468,
-	  title: "UX Designer",
-	  description: "Design user-friendly interfaces for web and mobile applications.",
-	  location: "Berlin, Germany",
-	  type: "Part-Time",
-	  date: "2024-09-10",
-	  status: "Open",
+		careerId: 546365365468,
+		title: 'UX Designer',
+		description:
+			'Design user-friendly interfaces for web and mobile applications.',
+		location: 'Berlin, Germany',
+		type: 'Part-Time',
+		date: '2024-09-10',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365469,
-	  title: "Product Owner",
-	  description: "Lead product development teams and prioritize features.",
-	  location: "Toronto, Canada",
-	  type: "Full-Time",
-	  date: "2024-08-30",
-	  status: "Closed",
+		careerId: 546365365469,
+		title: 'Product Owner',
+		description: 'Lead product development teams and prioritize features.',
+		location: 'Toronto, Canada',
+		type: 'Full-Time',
+		date: '2024-08-30',
+		status: 'Closed',
 	},
 	{
-	  careerId: 546365365470,
-	  title: "DevOps Engineer",
-	  description: "Automate infrastructure and manage deployment pipelines.",
-	  location: "Sydney, Australia",
-	  type: "Full-Time",
-	  date: "2024-09-12",
-	  status: "Open",
+		careerId: 546365365470,
+		title: 'DevOps Engineer',
+		description: 'Automate infrastructure and manage deployment pipelines.',
+		location: 'Sydney, Australia',
+		type: 'Full-Time',
+		date: '2024-09-12',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365471,
-	  title: "Quality Assurance Engineer",
-	  description: "Test software to ensure it meets requirements and quality standards.",
-	  location: "Tokyo, Japan",
-	  type: "Full-Time",
-	  date: "2024-09-15",
-	  status: "Open",
+		careerId: 546365365471,
+		title: 'Quality Assurance Engineer',
+		description:
+			'Test software to ensure it meets requirements and quality standards.',
+		location: 'Tokyo, Japan',
+		type: 'Full-Time',
+		date: '2024-09-15',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365472,
-	  title: "Frontend Developer",
-	  description: "Develop the frontend of web applications using modern frameworks.",
-	  location: "Paris, France",
-	  type: "Full-Time",
-	  date: "2024-09-08",
-	  status: "Closed",
+		careerId: 546365365472,
+		title: 'Frontend Developer',
+		description:
+			'Develop the frontend of web applications using modern frameworks.',
+		location: 'Paris, France',
+		type: 'Full-Time',
+		date: '2024-09-08',
+		status: 'Closed',
 	},
 	{
-	  careerId: 546365365473,
-	  title: "Backend Developer",
-	  description: "Work on server-side logic and integration of APIs.",
-	  location: "Singapore",
-	  type: "Contract",
-	  date: "2024-09-18",
-	  status: "Open",
+		careerId: 546365365473,
+		title: 'Backend Developer',
+		description: 'Work on server-side logic and integration of APIs.',
+		location: 'Singapore',
+		type: 'Contract',
+		date: '2024-09-18',
+		status: 'Open',
 	},
 	{
-	  careerId: 546365365474,
-	  title: "Cybersecurity Specialist",
-	  description: "Ensure the security of systems and protect against cyber threats.",
-	  location: "Austin, USA",
-	  type: "Full-Time",
-	  date: "2024-09-20",
-	  status: "Open",
+		careerId: 546365365474,
+		title: 'Cybersecurity Specialist',
+		description:
+			'Ensure the security of systems and protect against cyber threats.',
+		location: 'Austin, USA',
+		type: 'Full-Time',
+		date: '2024-09-20',
+		status: 'Open',
 	},
-  ];
-  
+];
 
 const columns: TableColumn<TDataRow>[] = [
 	{
@@ -219,17 +224,22 @@ const columns: TableColumn<TDataRow>[] = [
 		name: 'Action',
 		id: 'action',
 		cell: () => (
-			<div className='flex items-center gap-3'>
-                <div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="carbon:view-filled" />
+			<div className="flex items-center gap-3">
+				<Link to="4353254325">
+				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
+					<Icon className="text-[1.5rem]" icon="carbon:view-filled" />
+				</div>
+				</Link>
+				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
+					<Icon className="text-[1.5rem]" icon="material-symbols:edit" />
+				</div>
+				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
+					<Icon
+						className="text-[1.5rem]"
+						icon="material-symbols:delete-rounded"
+					/>
+				</div>
 			</div>
-			<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-			<Icon className="text-[1.5rem]" icon="material-symbols:edit" />
-			</div>
-			<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="material-symbols:delete-rounded" />
-			</div>
-            </div>
 		),
 		center: true,
 		grow: 1,

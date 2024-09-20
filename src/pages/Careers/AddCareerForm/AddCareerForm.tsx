@@ -6,6 +6,7 @@ import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { addCareerSchema } from '../../../schemas/addCareerSchema';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const jobLocationsOptions = [
 	{ label: 'Office', value: 'office' },
@@ -23,13 +24,14 @@ const jobTypesOptions = [
 ];
 
 export default function AddCareerForm() {
+	const navigate = useNavigate()
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log('Submitted form data ===> ', data);
 	};
 	return (
 		<div className="bg-white shadow-custom md:min-h-screen min-h-[100%] pb-10 md:mb-0 mb-[1rem]">
 			<div className="flex items-center md:gap-[2rem] gap-[1rem] md:px-[2rem] px-[1rem] py-[1rem]">
-				<div className="flex items-center md:gap-3 gap-2 border-[1px] border-gray-300 md:px-4 px-2 py-1 cursor-pointer">
+				<div onClick={()=>navigate(-1)} className="flex items-center md:gap-3 gap-2 border-[1px] border-gray-300 md:px-4 px-2 py-1 cursor-pointer">
 					<Icon className="text-[1.5rem]" icon="mingcute:left-line" />
 					Back
 				</div>
