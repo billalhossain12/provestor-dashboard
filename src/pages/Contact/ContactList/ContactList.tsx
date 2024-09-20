@@ -3,17 +3,17 @@ import DataTable, {
 	TableColumn,
 	TableStyles,
 } from 'react-data-table-component';
+import { ContactModal } from '../ContactModal/ContactModal';
 
 type TDataRow = {
-	propertyId: number;
-	investorName: string;
-	investorEmail: string;
-	ownerName: string;
-	purchasePrice: number;
-	totalPropertyCost: number;
-	investedDate: string;
-	investedShares: number;
-	investedAmount: number;
+	enquireId: number;
+	contactDetails: {
+		name: string;
+		email: string;
+		phone: string;
+	};
+	date: string;
+	message: string;
 };
 
 const customStyles: TableStyles = {
@@ -39,7 +39,7 @@ const customStyles: TableStyles = {
 			// borderRadius: "6px 6px 0px 0px",
 			// borderTop: "0.824px solid #E9E9E9",
 			background: '#FFF',
-			color: '#667085',
+			color: '#565656',
 			padding: '10px 10px',
 			fontSize: '14px',
 			fontWeight: 400,
@@ -72,26 +72,37 @@ const customStyles: TableStyles = {
 
 const data = [
 	{
-		propertyId: 543654654,
-		investorName: 'Siam Ahmed',
-		investorEmail: 'siam.ahmed@gmail.com',
-		ownerName: 'Sadman Rakib',
-		purchasePrice: 45000,
-		totalPropertyCost: 37000,
-		investedDate: '15/09/2024',
-		investedShares: 1800,
-		investedAmount: 2500,
+		enquireId: 5645654654,
+		contactDetails: {
+			name: 'Billal Hossain',
+			email: 'billal.hossain@gmail.com',
+			phone: '013435453',
+		},
+		date: '09/19/2024',
+		message:
+			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
 	},
 	{
-		propertyId: 543654654,
-		investorName: 'Siam Ahmed',
-		investorEmail: 'siam.ahmed@gmail.com',
-		ownerName: 'Sadman Rakib',
-		purchasePrice: 45000,
-		totalPropertyCost: 37000,
-		investedDate: '15/09/2024',
-		investedShares: 1800,
-		investedAmount: 2500,
+		enquireId: 5645654654,
+		contactDetails: {
+			name: 'Billal Hossain',
+			email: 'billal.hossain@gmail.com',
+			phone: '013435453',
+		},
+		date: '09/19/2024',
+		message:
+			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
+	},
+	{
+		enquireId: 5645654654,
+		contactDetails: {
+			name: 'Billal Hossain',
+			email: 'billal.hossain@gmail.com',
+			phone: '013435453',
+		},
+		date: '09/19/2024',
+		message:
+			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
 	},
 ];
 
@@ -100,75 +111,54 @@ const columns: TableColumn<TDataRow>[] = [
 		name: 'SL',
 		selector: (row, index) => (index as number) + 1,
 		center: true,
-		maxWidth: '0.5rem',
+		maxWidth: '0.3rem',
 	},
 	{
-		name: 'Investor Details',
-		id: 'investorDetails',
+		name: 'Enquiry ID',
+		id: 'enquireyId',
+		selector: row => row.enquireId,
+		center: true,
+		grow: 1,
+	},
+	{
+		name: 'Details',
+		id: 'details',
 		cell: row => (
 			<div className="space-y-[0.3rem]">
-				<p>{row.propertyId}</p>
-				<p>{row.investorName}</p>
-				<p>{row.investorEmail}</p>
+				<p>{row.contactDetails.name}</p>
+				<p>{row.contactDetails.email}</p>
+				<p>{row.contactDetails.phone}</p>
 			</div>
 		),
 		grow: 2,
 	},
 	{
-		name: 'Property Details',
-		id: 'propertyDetails',
-		cell: row => (
-			<div className="space-y-[0.3rem]">
-				<p><span className='font-semibold mr-[2px]'>Owner Name:-</span>{row.ownerName}</p>
-				<p><span className='font-semibold mr-[2px]'>Purchase Price:-</span>${row.purchasePrice}</p>
-				<p><span className='font-semibold mr-[2px]'>Total Property Cost:-</span>${row.totalPropertyCost}</p>
-			</div>
-		),
-		grow: 2,
-	},
-	{
-		name: 'Invested Date',
-		id: 'investedDate',
-		selector: row => row.investedDate,
+		name: 'Date',
+		id: 'date',
+		selector: row => row.date,
 		grow: 1,
 	},
 	{
-		name: 'Invested',
-		id: 'invested',
-		cell: row => (
-			<div className="space-y-[0.3rem]">
-				<div>
-					<span>Shares:-</span>
-					<span className="ml-1">{row.investedShares}</span>
-				</div>
-				<div>
-					<span>Invested:-</span>
-					<span className="ml-1">${row.investedAmount}</span>
-				</div>
-			</div>
-		),
-		grow: 1,
-		sortable: true,
+		name: 'Message',
+		id: 'message',
+		cell: row => <p>{row.message}</p>,
+		grow: 4,
 	},
 	{
 		name: 'Action',
 		id: 'action',
-		cell: () => (
-			<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="carbon:view-filled" />
-			</div>
-		),
+		cell: () => <ContactModal />,
 		center: true,
 		grow: 1,
 	},
 ];
 
-export default function LatestInvestmentList() {
+export default function ContactList() {
 	return (
 		<section className="mb-[2.5rem]">
 			<header className="overflow-x-auto xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] pb-5 bg-white p-5">
 				<div className="flex justify-between items-center min-w-[1100px]">
-					<h3 className="text-[1.25rem] font-medium">Latest Investments</h3>
+					<h3 className="text-[1.25rem] font-medium">Contact Enquires</h3>
 					<div className="flex items-center gap-[2.5rem] flex-wrap">
 						<div>
 							<div className="relative">
@@ -203,7 +193,7 @@ export default function LatestInvestmentList() {
 			</header>
 
 			{/* Table  */}
-			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] bg-white">
+			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw]">
 				<DataTable
 					columns={columns.map(column => ({
 						...column,

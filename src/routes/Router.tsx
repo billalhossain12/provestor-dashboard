@@ -12,6 +12,8 @@ import ChatSupport from '../pages/ChatSupport/ChatSupport';
 import FAQ from '../pages/FAQ/FAQ';
 import Archives from '../pages/Archives/Archives';
 import Notifications from '../pages/Notifications/Notifications';
+import CareerPanel from '../pages/Careers/CareerPanel';
+import AddCareerForm from '../pages/Careers/AddCareerForm/AddCareerForm';
 
 export const router = createBrowserRouter([
 	{
@@ -48,7 +50,17 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'careers',
-				element: <Careers />,
+				element: <CareerPanel />,
+				children:[
+					{
+						path:"",
+						element:<Careers/>
+					},
+					{
+						path:"add-career",
+						element:<AddCareerForm/>
+					},
+				]
 			},
 			{
 				path: 'values',
