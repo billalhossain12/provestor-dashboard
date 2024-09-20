@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AppliedCandidateList from './AppliedCandidateList';
 
 export default function CareerView() {
 	const navigate = useNavigate();
@@ -8,7 +9,7 @@ export default function CareerView() {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}, []);
 	return (
-		<div>
+		<main>
 			<div className="flex items-center md:gap-[2rem] gap-[1rem] mb-[3rem]">
 				<div
 					onClick={() => navigate(-1)}
@@ -70,7 +71,7 @@ export default function CareerView() {
 				</div>
 			</div>
 
-			<div className="bg-white shadow-custom p-[1rem] max-w-[330px] mt-[2.5rem]">
+			<div className="bg-white shadow-custom p-[1rem] max-w-[330px] my-[2.5rem]">
 				<h5 className="text-[#858585]">Applied</h5>
 				<div className="flex justify-between items-center mt-1">
 					<h1 className="text-[2rem] font-semibold">200</h1>
@@ -83,6 +84,7 @@ export default function CareerView() {
 				</div>
 			</div>
 
-		</div>
+      <AppliedCandidateList/>
+		</main>
 	);
 }
