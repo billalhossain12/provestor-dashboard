@@ -183,7 +183,6 @@ const columns: TableColumn<TDataRow>[] = [
 				<p>{row.investorDetails.phone}</p>
 			</div>
 		),
-		grow: 1,
 	},
 
 	{
@@ -202,7 +201,7 @@ const columns: TableColumn<TDataRow>[] = [
 		id: 'action',
 		cell: () => (
 			<div className="flex items-center gap-3">
-				<AppliedViewModal/>
+				<AppliedViewModal />
 
 				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
 					<Icon
@@ -213,7 +212,6 @@ const columns: TableColumn<TDataRow>[] = [
 			</div>
 		),
 		center: true,
-		grow: 1,
 	},
 ];
 
