@@ -3,17 +3,18 @@ import DataTable, {
 	TableColumn,
 	TableStyles,
 } from 'react-data-table-component';
-import { ContactModal } from '../ContactModal/ContactModal';
+
+type TUserDetails = {
+	name: string;
+	email: string;
+	phone: string;
+};
 
 type TDataRow = {
-	enquireId: number;
-	contactDetails: {
-		name: string;
-		email: string;
-		phone: string;
-	};
-	date: string;
-	message: string;
+	userId: number;
+	userDetails: TUserDetails;
+	onboardingDate: string;
+	status: string;
 };
 
 const customStyles: TableStyles = {
@@ -72,37 +73,104 @@ const customStyles: TableStyles = {
 
 const data = [
 	{
-		enquireId: 5645654654,
-		contactDetails: {
-			name: 'Billal Hossain',
-			email: 'billal.hossain@gmail.com',
-			phone: '013435453',
+		userId: 'A1b2C3d4',
+		userDetails: {
+			name: 'User 1',
+			email: 'user1@example.com',
+			phone: '555-10001',
 		},
-		date: '09/19/2024',
-		message:
-			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
+		onboardingDate: '2024-09-11',
+		status: 'active',
 	},
 	{
-		enquireId: 5645654654,
-		contactDetails: {
-			name: 'Billal Hossain',
-			email: 'billal.hossain@gmail.com',
-			phone: '013435453',
+		userId: 'E5f6G7h8',
+		userDetails: {
+			name: 'User 2',
+			email: 'user2@example.com',
+			phone: '555-10002',
 		},
-		date: '09/19/2024',
-		message:
-			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
+		onboardingDate: '2024-09-12',
+		status: 'inactive',
 	},
 	{
-		enquireId: 5645654654,
-		contactDetails: {
-			name: 'Billal Hossain',
-			email: 'billal.hossain@gmail.com',
-			phone: '013435453',
+		userId: 'I9j0K1l2',
+		userDetails: {
+			name: 'User 3',
+			email: 'user3@example.com',
+			phone: '555-10003',
 		},
-		date: '09/19/2024',
-		message:
-			"Got a question or need assistance? Feel free to reach out, and I'll get back to you as soon as possible!",
+		onboardingDate: '2024-09-13',
+		status: 'active',
+	},
+	{
+		userId: 'M3n4O5p6',
+		userDetails: {
+			name: 'User 4',
+			email: 'user4@example.com',
+			phone: '555-10004',
+		},
+		onboardingDate: '2024-09-14',
+		status: 'inactive',
+	},
+	{
+		userId: 'Q7r8S9t0',
+		userDetails: {
+			name: 'User 5',
+			email: 'user5@example.com',
+			phone: '555-10005',
+		},
+		onboardingDate: '2024-09-15',
+		status: 'active',
+	},
+	{
+		userId: 'U1v2W3x4',
+		userDetails: {
+			name: 'User 6',
+			email: 'user6@example.com',
+			phone: '555-10006',
+		},
+		onboardingDate: '2024-09-16',
+		status: 'inactive',
+	},
+	{
+		userId: 'Y5z6A7b8',
+		userDetails: {
+			name: 'User 7',
+			email: 'user7@example.com',
+			phone: '555-10007',
+		},
+		onboardingDate: '2024-09-17',
+		status: 'active',
+	},
+	{
+		userId: 'C9d0E1f2',
+		userDetails: {
+			name: 'User 8',
+			email: 'user8@example.com',
+			phone: '555-10008',
+		},
+		onboardingDate: '2024-09-18',
+		status: 'inactive',
+	},
+	{
+		userId: 'G3h4I5j6',
+		userDetails: {
+			name: 'User 9',
+			email: 'user9@example.com',
+			phone: '555-10009',
+		},
+		onboardingDate: '2024-09-19',
+		status: 'active',
+	},
+	{
+		userId: 'K7l8M9n0',
+		userDetails: {
+			name: 'User 10',
+			email: 'user10@example.com',
+			phone: '555-10010',
+		},
+		onboardingDate: '2024-09-20',
+		status: 'inactive',
 	},
 ];
 
@@ -114,35 +182,35 @@ const columns: TableColumn<TDataRow>[] = [
 		maxWidth: '0.3rem',
 	},
 	{
-		name: 'Enquiry ID',
-		id: 'enquireyId',
-		selector: row => row.enquireId,
+		name: 'User ID',
+		id: 'userId',
+		selector: row => row.userId,
 		center: true,
 		grow: 1,
 	},
 	{
-		name: 'Details',
-		id: 'details',
+		name: 'User Details',
+		id: 'userDetails',
 		cell: row => (
 			<div className="space-y-[0.3rem]">
-				<p>{row.contactDetails.name}</p>
-				<p>{row.contactDetails.email}</p>
-				<p>{row.contactDetails.phone}</p>
+				<p>{row.userDetails.name}</p>
+				<p>{row.userDetails.email}</p>
+				<p>{row.userDetails.phone}</p>
 			</div>
 		),
 		grow: 2,
 	},
 	{
-		name: 'Date',
-		id: 'date',
-		selector: row => row.date,
+		name: 'Onboarding Date',
+		id: 'onboardingDate',
+		selector: row => row.onboardingDate,
 		grow: 1,
 	},
 	{
-		name: 'Message',
-		id: 'message',
-		cell: row => <p>{row.message}</p>,
-		grow: 4,
+		name: 'Status',
+		id: 'status',
+		cell: row => <p>{row.status}</p>,
+		grow: 1,
 	},
 	{
 		name: 'Action',

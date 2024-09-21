@@ -18,6 +18,8 @@ import CareerView from '../pages/Careers/CareerView/CareerView';
 import EditFaqForm from '../pages/FAQ/EditFaqForm/EditFaqForm';
 import AddFaqForm from '../pages/FAQ/AddFaqForm/AddFaqForm';
 import Users from '../pages/Users/Users';
+import UsersPanel from '../pages/Users/UsersPanel';
+import BlockedUsersList from '../pages/Users/BlockedUsersList/BlockedUsersList';
 
 export const router = createBrowserRouter([
 	{
@@ -38,7 +40,17 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'users',
-				element: <Users />,
+				element: <UsersPanel />,
+				children:[
+					{
+						path:'',
+						element:<Users/>
+					},
+					{
+						path:'blocked-users',
+						element:<BlockedUsersList/>
+					},
+				]
 			},
 			{
 				path: 'property',
