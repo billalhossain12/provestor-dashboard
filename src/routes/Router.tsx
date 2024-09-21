@@ -11,7 +11,6 @@ import Settings from '../pages/Settings/Settings';
 import ChatSupport from '../pages/ChatSupport/ChatSupport';
 import FAQ from '../pages/FAQ/FAQ';
 import Archives from '../pages/Archives/Archives';
-import Notifications from '../pages/Notifications/Notifications';
 import CareerPanel from '../pages/Careers/CareerPanel';
 import AddCareerForm from '../pages/Careers/AddCareerForm/AddCareerForm';
 import CareerView from '../pages/Careers/CareerView/CareerView';
@@ -21,6 +20,9 @@ import Users from '../pages/Users/Users';
 import UsersPanel from '../pages/Users/UsersPanel';
 import BlockedUsersList from '../pages/Users/BlockedUsersList/BlockedUsersList';
 import NotFound from '../pages/NotFound/NotFound';
+import NotificationPanel from '../pages/Notifications/NotificationPanel';
+import SendNotificationForm from '../pages/Notifications/SendNotificationForm/SendNotificationForm';
+import EditNotificationForm from '../pages/Notifications/EditNotificationForm/EditNotificationForm';
 
 export const router = createBrowserRouter([
 	{
@@ -68,7 +70,17 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'notifications',
-				element: <Notifications />,
+				element: <NotificationPanel />,
+				children:[
+					{
+						path:'',
+						element:<SendNotificationForm/>
+					},
+					{
+						path:':notificationId',
+						element:<EditNotificationForm/>
+					},
+				]
 			},
 			{
 				path: 'careers',

@@ -9,50 +9,74 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
-
-
 /* For custom scroll bar */
 *::-webkit-scrollbar {
 	width: 12px;
-  }
-  *::-webkit-scrollbar-track {
+}
+*::-webkit-scrollbar-track {
 	border-radius: 8px;
-  }
-  *::-webkit-scrollbar-thumb {
+}
+*::-webkit-scrollbar-thumb {
 	height: 56px;
 	border-radius: 8px;
 	border: 4px solid transparent;
 	background-clip: content-box;
 	background-color: #888;
-  }
+}
 
-  aside::-webkit-scrollbar-thumb {
+aside::-webkit-scrollbar-thumb {
 	background-color: #fff;
-  }
+}
 
-  aside:hover::-webkit-scrollbar-thumb{
+aside:hover::-webkit-scrollbar-thumb {
 	background-color: #888;
-  }
-  
+}
 
-  /* styles for react-slider */
+/* styles for react-slider */
 .horizontal-slider {
 	width: 100%;
 	height: 20px;
-  }
-  
-  .example-track {
-	background-color: #CDE7FF;
+}
+
+.example-track {
+	background-color: #cde7ff;
 	height: 8px;
-  }
-  .example-track-0 {
-	background-color: #0095FF;
+}
+.example-track-0 {
+	background-color: #0095ff;
 	height: 8px;
 	border-radius: 10px;
-  }
-  .example-track-1 {
-	background-color: #CDE7FF;
+}
+.example-track-1 {
+	background-color: #cde7ff;
 	height: 8px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
-  }
+}
+
+/*React Flatpicker css custom styles */
+div.flatpickr-current-month
+	.flatpickr-monthDropdown-months
+	.flatpickr-monthDropdown-month,
+.flatpickr-weekdays,
+.flatpickr-weekdays span,
+div.flatpickr-month,
+div.flatpickr-current-month .flatpickr-monthDropdown-months {
+	background-color: #24B24B !important;
+}
+div.flatpickr-current-month .flatpickr-monthDropdown-months {
+	color: #fff;
+}
+.flatpickr-current-month input.cur-year {
+	color: #fff !important;
+}
+div.flatpickr-days .dayContainer {
+	background: #fff;
+}
+div.flatpickr-days .dayContainer .flatpickr-day.selected {
+	background: #24B24B !important;
+	color: #fff;
+}
+select .flatpickr-monthDropdown-month:hover {
+	background: red !important;
+}

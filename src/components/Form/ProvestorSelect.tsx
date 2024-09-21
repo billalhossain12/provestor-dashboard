@@ -16,9 +16,10 @@ type TProvestorSelectProps = {
 	placeholder?: string;
 	required?: boolean;
 	formName?: string;
+	isMulti?:boolean;
 };
 
-const customStyles: StylesConfig<TOptions, false> = {
+const customStyles: StylesConfig<TOptions, boolean> = {
 	container: provided => ({
 		...provided,
 		width: '100%',
@@ -74,6 +75,7 @@ export default function ProvestorSelect({
 	options,
 	required,
 	placeholder,
+	isMulti=false
 }: TProvestorSelectProps) {
 	const {
 		control,
@@ -96,6 +98,7 @@ export default function ProvestorSelect({
 						options={options}
 						placeholder={placeholder}
 						styles={customStyles}
+						isMulti={isMulti}
 						className={`rounded-md border-[1px] duration-300 ${
 							errors[name]?.message ? 'border-red-500' : 'border-[#D9D9D9]'
 						}`}
