@@ -23,6 +23,7 @@ import NotFound from '../pages/NotFound/NotFound';
 import NotificationPanel from '../pages/Notifications/NotificationPanel';
 import SendNotificationForm from '../pages/Notifications/SendNotificationForm/SendNotificationForm';
 import EditNotificationForm from '../pages/Notifications/EditNotificationForm/EditNotificationForm';
+import PropertyPanel from '../pages/Property/PropertyPanel';
 
 export const router = createBrowserRouter([
 	{
@@ -58,7 +59,13 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'property',
-				element: <Property />,
+				element: <PropertyPanel />,
+				children:[
+					{
+						path:'',
+						element:<Property/>
+					}
+				]
 			},
 			{
 				path: 'contact',
