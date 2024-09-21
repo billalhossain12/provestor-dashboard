@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactSlider from 'react-slider';
+import PropertyInvestmentList from '../PropertyInvestmentList/PropertyInvestmentList';
 
 export default function PropertyView() {
 	const navigate = useNavigate();
@@ -173,6 +174,9 @@ export default function PropertyView() {
 					</div>
 				</div>
 			</div>
+
+			{/* Section - 3  */}
+			<PropertyInvestmentList/>
 		</main>
 	);
 }
