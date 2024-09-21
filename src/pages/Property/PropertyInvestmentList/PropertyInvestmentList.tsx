@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import DataTable, { TableColumn, TableStyles } from 'react-data-table-component';
+import { InvestmentViewModal } from './InvestmentViewModal';
 
 type TDataRow = {
 	transactionId: number;
@@ -159,11 +160,7 @@ const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'Action',
 		id: 'action',
-		cell: () => (
-			<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="carbon:view-filled" />
-			</div>
-		),
+		cell: () => (<InvestmentViewModal/>),
 		center: true,
 		grow: 1,
 	},
