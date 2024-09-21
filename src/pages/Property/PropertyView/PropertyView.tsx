@@ -1,8 +1,12 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function PropertyView() {
 	const navigate = useNavigate();
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, []);
 	return (
 		<main>
 			<div className="flex items-center md:gap-[2rem] gap-[1rem] mb-[3rem]">
@@ -17,6 +21,8 @@ export default function PropertyView() {
 					Property ID : 12345
 				</h3>
 			</div>
+
+			
 		</main>
 	);
 }

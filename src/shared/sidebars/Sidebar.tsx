@@ -42,7 +42,6 @@ export default function Sidebar() {
 						to="property"
 						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
-						end
 					>
 						<Icon className="text-[1.5rem]" icon="mdi:land-plots-marker" />
 						<span>Property</span>
