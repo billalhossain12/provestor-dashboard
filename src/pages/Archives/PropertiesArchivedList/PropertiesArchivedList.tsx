@@ -74,70 +74,70 @@ const customStyles: TableStyles = {
 
 const data = [
 	{
-	  porpertyId: 1,
+	  porpertyId: 188767,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 1', purchasePrice: 100000, totalPropertyCost: 120000 },
 	  deletedDateTime: '2024-09-11 11:00:00',
 	  reason: 'Reason 1'
 	},
 	{
-	  porpertyId: 2,
+	  porpertyId: 2786878,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 2', purchasePrice: 200000, totalPropertyCost: 240000 },
 	  deletedDateTime: '2024-09-12 11:00:00',
 	  reason: 'Reason 2'
 	},
 	{
-	  porpertyId: 3,
+	  porpertyId: 8768763,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 3', purchasePrice: 300000, totalPropertyCost: 360000 },
 	  deletedDateTime: '2024-09-13 11:00:00',
 	  reason: 'Reason 3'
 	},
 	{
-	  porpertyId: 4,
+	  porpertyId: 48768768,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 4', purchasePrice: 400000, totalPropertyCost: 480000 },
 	  deletedDateTime: '2024-09-14 11:00:00',
 	  reason: 'Reason 4'
 	},
 	{
-	  porpertyId: 5,
+	  porpertyId: 5876876,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 5', purchasePrice: 500000, totalPropertyCost: 600000 },
 	  deletedDateTime: '2024-09-15 11:00:00',
 	  reason: 'Reason 5'
 	},
 	{
-	  porpertyId: 6,
+	  porpertyId: 68768768,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 6', purchasePrice: 600000, totalPropertyCost: 720000 },
 	  deletedDateTime: '2024-09-16 11:00:00',
 	  reason: 'Reason 6'
 	},
 	{
-	  porpertyId: 7,
+	  porpertyId: 87687687,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 7', purchasePrice: 700000, totalPropertyCost: 840000 },
 	  deletedDateTime: '2024-09-17 11:00:00',
 	  reason: 'Reason 7'
 	},
 	{
-	  porpertyId: 8,
+	  porpertyId: 8876878,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 8', purchasePrice: 800000, totalPropertyCost: 960000 },
 	  deletedDateTime: '2024-09-18 11:00:00',
 	  reason: 'Reason 8'
 	},
 	{
-	  porpertyId: 9,
+	  porpertyId: 98768768,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 9', purchasePrice: 900000, totalPropertyCost: 1080000 },
 	  deletedDateTime: '2024-09-19 11:00:00',
 	  reason: 'Reason 9'
 	},
 	{
-	  porpertyId: 10,
+	  porpertyId: 76876810,
 	  image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
 	  propertyDetails: { ownerName: 'Owner 10', purchasePrice: 1000000, totalPropertyCost: 1200000 },
 	  deletedDateTime: '2024-09-20 11:00:00',
