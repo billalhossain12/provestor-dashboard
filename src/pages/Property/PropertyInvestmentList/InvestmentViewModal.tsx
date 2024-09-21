@@ -106,7 +106,7 @@ export function InvestmentViewModal() {
 								<h5 className="text-[1.25rem] text-[#8B8D97]">
 									Payment status
 								</h5>
-								<div className="md:text-[1.5rem] text-[1rem] font-semibold text-[#037847] flex items-center gap-1">
+								<div className="md:text-[1.5rem] text-[1rem] font-semibold text-[#037847] flex items-center gap-2 bg-[#ECFDF3] px-4 py-2 rounded-full w-[160px]">
                                     <p className='rounded-full w-[8px] h-[8px] bg-[#037847]'></p>
 									<p>Success</p>
 								</div>
@@ -119,9 +119,10 @@ export function InvestmentViewModal() {
 							variant="gradient"
 							color=""
 							onClick={() => handleOpen(null)}
-							className="bg-primary text-white px-4 py-2"
+							className="bg-primary text-white px-4 py-2 flex items-center gap-2"
 						>
-							<span>Resolved</span>
+							<Icon className='text-[1.3rem]' icon="material-symbols:cloud-download" />
+							<span>Download Receipt</span>
 						</button>
 					</DialogFooter>
 				</Dialog>
