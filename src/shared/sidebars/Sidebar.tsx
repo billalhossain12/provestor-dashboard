@@ -29,6 +29,17 @@ export default function Sidebar() {
 				</li>
 				<li>
 					<NavLink
+						to="users"
+						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
+						style={setActiveStyles}
+						end
+					>
+						<Icon className="text-[1.5rem]" icon="fa-solid:user" />
+						<span>Users</span>
+					</NavLink>
+				</li>
+				<li>
+					<NavLink
 						to="property"
 						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
