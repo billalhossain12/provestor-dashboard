@@ -20,11 +20,13 @@ import AddFaqForm from '../pages/FAQ/AddFaqForm/AddFaqForm';
 import Users from '../pages/Users/Users';
 import UsersPanel from '../pages/Users/UsersPanel';
 import BlockedUsersList from '../pages/Users/BlockedUsersList/BlockedUsersList';
+import NotFound from '../pages/NotFound/NotFound';
 
 export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <MainLayout />,
+		errorElement:<NotFound/>,
 		children: [
 			{
 				path: '',
