@@ -8,7 +8,7 @@ export default function Property() {
     <main>
       <div className='flex items-center justify-between mb-[2rem]'>
 				<h3 className="text-[1.25rem] font-medium">Property</h3>
-				<Link to="add-property">
+				<Link to="add-porperty/property-details">
 				<button className='flex items-center text-[18px] font-bold justify-center gap-3 bg-primary px-8 py-2 text-white'>
 					<Icon className='text-[1.3rem]' icon="ic:twotone-plus" />
 					<p>Add Property</p>

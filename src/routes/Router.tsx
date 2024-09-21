@@ -25,6 +25,7 @@ import SendNotificationForm from '../pages/Notifications/SendNotificationForm/Se
 import EditNotificationForm from '../pages/Notifications/EditNotificationForm/EditNotificationForm';
 import PropertyPanel from '../pages/Property/PropertyPanel';
 import PropertyView from '../pages/Property/PropertyView/PropertyView';
+import PropertyDetailsForm from '../pages/Property/PropertyDetailsForm/PropertyDetailsForm';
 
 export const router = createBrowserRouter([
 	{
@@ -67,9 +68,13 @@ export const router = createBrowserRouter([
 						element:<Property/>
 					},
 					{
-						path:':propertyId',
+						path:'view/:propertyId',
 						element:<PropertyView/>
-					}
+					},
+					{
+						path:'add-porperty/property-details',
+						element:<PropertyDetailsForm/>
+					},
 				]
 			},
 			{

@@ -264,7 +264,7 @@ const columns: TableColumn<TDataRow>[] = [
 		id: 'action',
 		cell: () => (
 			<div className="flex items-center gap-3">
-				<Link to="12345">
+				<Link to="view/12345">
 					<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
 						<Icon className="text-[1.5rem]" icon="carbon:view-filled" />
 					</div>
