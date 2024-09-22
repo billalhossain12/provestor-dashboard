@@ -52,6 +52,7 @@ export default function AmenityCustomSelector() {
 						.map(item => (
 							<AmenityItem key={item.id} item={item} />
 						))}
+					{amenities.filter(item => !item.selected).length == 0 && <p className='text-gray-400 font-semibold text-center'>No options</p>}
 					<AddNewAmenityButton />
 				</div>
 			)}
