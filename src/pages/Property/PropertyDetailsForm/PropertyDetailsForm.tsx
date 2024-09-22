@@ -130,9 +130,10 @@ export default function PropertyDetailsForm() {
 					/>
 					<div className="md:col-span-2 md:row-span-2">
 						<ProvestorTextArea
-							name="about"
-							label="About Product/Property"
+							name="tenantOrRentalProcessDescription"
+							label="Tenant/Rental Process - Description"
 							placeholder="Enter text here"
+							required={true}
 						/>
 					</div>
 					<ProvestorInput
@@ -142,6 +143,44 @@ export default function PropertyDetailsForm() {
 						required={true}
 						placeholder="Enter Location"
 					/>
+					<ProvestorInput
+						type="text"
+						name="lattitude"
+						label="Location Lattitude"
+						required={true}
+						placeholder="Enter Location Lattitude"
+					/>
+					<div className="md:col-span-2 md:row-span-2">
+						<ProvestorTextArea
+							name="about"
+							label="About Product/Property"
+							placeholder="Enter text here"
+							required={true}
+						/>
+					</div>
+
+					<ProvestorInput
+						type="text"
+						name="longitude"
+						label="Location Longitude"
+						required={true}
+						placeholder="Enter Location Longitude"
+					/>
+					<ProvestorInput
+						type="number"
+						name="anticipateMonthlyRent"
+						label="Anticipated Monthly Rent"
+						required={true}
+						placeholder="Enter Location"
+					/>
+					<div className="md:col-span-2 md:row-span-2">
+						<ProvestorTextArea
+							name="highlights"
+							label="Highlights"
+							placeholder="Enter text here"
+							required={true}
+						/>
+					</div>
 					<ProvestorSelect
 						options={[
 							{ label: 'Yes', value: 'Yes' },
@@ -152,38 +191,19 @@ export default function PropertyDetailsForm() {
 						required={true}
 						placeholder="Select Rent Status"
 					/>
-					<div className="md:col-span-2 md:row-span-2">
-						<ProvestorTextArea
-							name="tenantOrRentalProcessDescription"
-							label="Tenant/Rental Process - Description"
-							placeholder="Enter text here"
-						/>
-					</div>
-					<ProvestorInput
-						type="number"
-						name="anticipateMonthlyRent"
-						label="Anticipated Monthly Rent"
-						required={true}
-						placeholder="Enter Location"
-					/>
 					<ProvestorDatePicker
 						name="anticipatedDividendDate"
 						label="Anticipated Dividend Date"
 						required={true}
 						placeholder="Select date"
 					/>
-					<div className="md:col-span-2 md:row-span-2">
-						<ProvestorTextArea
-							name="highlights"
-							label="Highlights"
-							placeholder="Enter text here"
-						/>
-					</div>
+
 					<div className="md:col-span-2 md:row-span-2">
 						<ProvestorTextArea
 							name="managementDescription"
 							label="Property Management Description"
 							placeholder="Enter text here"
+							required={true}
 						/>
 					</div>
 					<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
