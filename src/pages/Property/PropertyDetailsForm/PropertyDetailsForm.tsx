@@ -6,6 +6,7 @@ import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import ProvestorInput from '../../../components/Form/ProvestorInput';
 import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
 import ProvestorDatePicker from '../../../components/Form/ProvestorDatePicker';
+import { useState } from 'react';
 
 const propertyTypeOptions = [
 	{
@@ -22,6 +23,12 @@ export default function PropertyDetailsForm() {
 	const navigate = useNavigate();
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
+	};
+
+	// Custom Select Logics
+	const [visible, setVisible] = useState(true);
+	const handleToggleVisible = () => {
+		setVisible(!visible);
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
@@ -48,13 +55,96 @@ export default function PropertyDetailsForm() {
 						options={propertyTypeOptions}
 						placeholder="Select Property"
 					/>
-					<ProvestorSelect
+					{/* <ProvestorSelect
 						name="amenities"
 						label="Amenities"
 						required={true}
 						options={propertyTypeOptions}
 						placeholder="Select Property"
-					/>
+					/> */}
+
+					<div className="relative">
+						{/* Controller  */}
+						<div onClick={handleToggleVisible}>
+							<h5 className="mb-[0.5rem]">
+								Amenities <span className="text-red-500">*</span>
+							</h5>
+							<div className="border-[1px] border-[#D9D9D9] px-[12px] py-[21px] w-full cursor-pointer relative">
+								<div className="absolute right-1 top-2 text-[1.5rem] flex items-center gap-2">
+									<p className="bg-gray-400 w-[1px] h-[20px]"></p>
+									<Icon icon="iconamoon:arrow-down-2" />
+								</div>
+							</div>
+						</div>
+
+						{/* Options  */}
+						{visible && (
+							<div
+								style={{ boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.15)' }}
+								className="mt-2 p-[1rem] bg-white absolute w-full space-y-[1rem]"
+							>
+								{/* option-1  */}
+								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
+									<div className="flex items-center gap-2">
+										<Icon
+											className="text-[1.5rem]"
+											icon="material-symbols-light:bed-outline"
+										/>
+										<p>Beds</p>
+									</div>
+									<div className="flex items-center gap-5">
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-minus" />
+										</button>
+										<div>0</div>
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-plus" />
+										</button>
+									</div>
+								</div>
+								{/* option-2  */}
+								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
+									<div className="flex items-center gap-2">
+										<Icon className="text-[1.3rem]" icon="solar:bath-outline" />
+										<p>Baths</p>
+									</div>
+									<div className="flex items-center gap-5">
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-minus" />
+										</button>
+										<div>0</div>
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-plus" />
+										</button>
+									</div>
+								</div>
+								{/* option-3  */}
+								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
+									<div className="flex items-center gap-2">
+										<Icon
+											className="text-[1.3rem]"
+											icon="fluent:vehicle-car-parking-20-regular"
+										/>
+										<p>Parking</p>
+									</div>
+									<div className="flex items-center gap-5">
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-minus" />
+										</button>
+										<div>0</div>
+										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
+											<Icon icon="ic:baseline-plus" />
+										</button>
+									</div>
+								</div>
+								<button className='flex items-center justify-center text-white select-none gap-2 bg-primary w-full py-2'>
+									<Icon className='text-[1.5rem]' icon="ic:baseline-plus" />
+									<span>Add</span>
+								</button>
+							</div>
+						)}
+					</div>
+
 					<ProvestorInput
 						type="text"
 						name="ownership"
@@ -167,6 +257,7 @@ export default function PropertyDetailsForm() {
 						name="anticipatedDividendDate"
 						label="Anticipated Dividend Date"
 						required={true}
+						placeholder="Select date"
 					/>
 					<div className="md:col-span-2 md:row-span-2">
 						<ProvestorTextArea
@@ -182,8 +273,10 @@ export default function PropertyDetailsForm() {
 							placeholder="Enter text here"
 						/>
 					</div>
-					<div className='md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]'>
-						<button className='bg-primary text-white px-[3rem] text-[18px] font-bold py-2'>Nex</button>
+					<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
+						<button className="bg-primary text-white px-[3rem] text-[18px] font-bold py-2">
+							Nex
+						</button>
 					</div>
 				</div>
 			</ProvestorForm>
