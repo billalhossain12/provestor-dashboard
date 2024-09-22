@@ -26,10 +26,6 @@ export default function ProvestorForm({
 		formConfig.resolver = resolver;
 	}
 
-	//   const submit = (data) => {
-	//     onSubmit(data, methods);
-	//   };
-
 	const methods = useForm(formConfig);
 
 	return (
