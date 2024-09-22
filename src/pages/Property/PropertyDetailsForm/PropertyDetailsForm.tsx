@@ -8,6 +8,7 @@ import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
 import ProvestorDatePicker from '../../../components/Form/ProvestorDatePicker';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import {
+	addAmenity,
 	decreaseAmenity,
 	hideAmenityInput,
 	increaseAmenity,
@@ -34,6 +35,7 @@ export default function PropertyDetailsForm() {
 		state => state.amenitySelect
 	);
 	const [amenityTitle, setAmenityTitle] = useState('');
+	const [showError, setShowError] = useState(false);
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
@@ -122,24 +124,40 @@ export default function PropertyDetailsForm() {
 										</div>
 									))}
 
+
+									{/* Add New Amenity  */}
 								<div className="mt-3">
 									{amenityInputVisible ? (
-										<div className="flex items-center bg-red-500 h-[40px] mt-3">
+										<div className="mt-3">
 											<input
-												className="border-[1px] border-gray-300 px-4 w-full outline-none h-full"
+												className="px-4 py-[10px] w-full outline-none border-[1px] border-gray-300 h-full"
 												placeholder="Enter amenity title"
 												type="text"
 												onChange={e => setAmenityTitle(e.target.value)}
 											/>
+											{showError && !amenityTitle && <p className='text-red-500 text-[14px] text-right'>Amenity title is required*</p>}
+											<div className='flex items-center gap-5 justify-end mt-3'>
 											<button
 												onClick={() => {
 													dispatch(hideAmenityInput());
 												}}
-												className="flex items-center justify-center text-white select-none gap-1 bg-primary w-[80px] h-full"
+												className="flex items-center justify-center px-4 py-2 text-white select-none gap-1 bg-red-500 w-[80px] h-full"
 											>
-												<Icon className="text-[1rem]" icon="ic:baseline-plus" />
+												<span>Cancel</span>
+											</button>
+											<button
+												onClick={() => {
+													if(!amenityTitle){
+														return setShowError(true)
+													}
+													dispatch(hideAmenityInput());
+													dispatch(addAmenity(amenityTitle))
+												}}
+												className="flex items-center justify-center px-4 py-2 text-white select-none gap-1 bg-primary w-[80px] h-full"
+											>
 												<span>Add</span>
 											</button>
+											</div>
 										</div>
 									) : (
 										<button
