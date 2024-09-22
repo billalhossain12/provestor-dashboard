@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import {
 	decreaseAmenity,
 	increaseAmenity,
+	selectAmenity,
 } from '../../../../redux/slices/amenitySelectSlice';
 import { useAppDispatch } from '../../../../redux/hooks';
 
@@ -18,7 +19,7 @@ export default function AmenityItem({ item }: TAmenity) {
 	const dispatch = useAppDispatch();
 	return (
 		<div
-			onClick={() => alert('Hi')}
+			onClick={() => dispatch(selectAmenity(item.id))}
 			className="flex justify-between items-center select-none hover:bg-gray-200 border-b-[1px] border-[#E5E5E5] p-4 cursor-pointer"
 		>
 			<h5>{item.title}</h5>

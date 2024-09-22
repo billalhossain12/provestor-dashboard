@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
-import { toggleAmenity } from '../../../../redux/slices/amenitySelectSlice';
+import { deSelectAmenity, toggleAmenity } from '../../../../redux/slices/amenitySelectSlice';
 import AmenityItem from './AmenityItem';
 import AddNewAmenityButton from './AddNewAmenityButton';
 
@@ -17,11 +17,24 @@ export default function AmenityCustomSelector() {
 				<h5 className="mb-[0.5rem]">
 					Amenities <span className="text-red-500">*</span>
 				</h5>
-				<div className="border-[1px] border-[#D9D9D9] px-[12px] py-[21px] w-full cursor-pointer relative">
-					<div className="absolute right-1 top-2 text-[1.5rem] flex items-center gap-2">
-						<p className="bg-gray-400 w-[1px] h-[20px]"></p>
-						<Icon icon="iconamoon:arrow-down-2" />
-					</div>
+				<div className="border-[1px] border-[#D9D9D9] p-[3px] min-h-[44px] w-full cursor-pointer flex items-center flex-wrap gap-1">
+					{
+						amenities.filter(item => item.selected).map(item => (<div key={item.id} className="border-[1px] select-none h-[35px] border-primary px-2 py-1 bg-[#24B24B26] text-primary flex items-center gap-2">
+							<Icon
+							onClick={(e)=>{
+								e.stopPropagation();
+								dispatch(deSelectAmenity(item.id))
+							}}
+								className="border-[1px] border-primary rounded-full p-[2px] text-[1.3rem]"
+								icon="oui:cross"
+							/>
+							<p className='bg-primary h-[70%] w-[1px]'></p>
+							<div>
+								<span>{item.title}</span>
+								<span>{item.quantity}</span>
+							</div>
+						</div>))
+					}
 				</div>
 			</div>
 

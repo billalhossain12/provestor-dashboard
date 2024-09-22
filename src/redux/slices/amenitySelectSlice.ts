@@ -56,6 +56,24 @@ const amenitySelectSlice = createSlice({
 			});
 		},
 
+		selectAmenity(state, action) {
+			state.amenities.map(item => {
+				if (item.id === action.payload) {
+					item.selected = true;
+				}
+				return item;
+			});
+		},
+
+		deSelectAmenity(state, action) {
+			state.amenities.map(item => {
+				if (item.id === action.payload) {
+					item.selected = false;
+				}
+				return item;
+			});
+		},
+
 		deleteAmenity(state, action) {
 			const filteredAmenities = state.amenities.filter(
 				item => item.id !== action.payload
@@ -90,8 +108,10 @@ export const {
 	decreaseAmenity,
 	toggleAmenity,
 	hideAmenity,
-    showAmenityInput,
-    hideAmenityInput
+	showAmenityInput,
+	hideAmenityInput,
+	selectAmenity,
+	deSelectAmenity
 } = amenitySelectSlice.actions;
 
 export default amenitySelectSlice.reducer;
