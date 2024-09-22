@@ -214,7 +214,7 @@ const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'Image',
 		id: 'image',
-		cell: row => <img src={row.image} alt="Property Image" />,
+		cell: row => <img className='h-full w-full' src={row.image} alt="Property Image" />,
 		center: true,
 		grow: 1,
 	},

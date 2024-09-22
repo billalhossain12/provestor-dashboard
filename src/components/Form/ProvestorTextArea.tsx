@@ -29,7 +29,7 @@ export default function ProvestorTextArea({
 				{required && <RedStar />}
 			</label>
 			<textarea
-				className={`outline-none border-[1px] px-[12px] py-2 w-full md:h-[90%] h-[150px] duration-300 ${
+				className={`outline-none border-[1px] px-[12px] py-2 w-full md:h-[81%] h-[150px] duration-300 ${
 					readonly && 'cursor-not-allowed'
 				} ${errors[name]?.message ? 'border-red-500' : 'border-[#D9D9D9]'}`}
 				{...register(name)}
