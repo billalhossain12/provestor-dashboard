@@ -7,6 +7,7 @@ import ProvestorInput from '../../../components/Form/ProvestorInput';
 import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
 import AmenityCustomSelector from './AmenityCustomSelector/AmenityCustomSelector';
+import { useAppSelector } from '../../../redux/hooks';
 
 const propertyTypeOptions = [
 	{
@@ -21,9 +22,13 @@ const propertyTypeOptions = [
 
 export default function PropertyDetailsForm() {
 	const navigate = useNavigate();
+	const { amenities } = useAppSelector(state => state.amenitySelect);
+	const selectedAmenities = amenities
+		.filter(item => item.selected)
+		.map(item => ({ title: item.title, quantity: item.quantity }));
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
-		console.log(data);
+		console.log({ ...data, amenities: selectedAmenities });
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
