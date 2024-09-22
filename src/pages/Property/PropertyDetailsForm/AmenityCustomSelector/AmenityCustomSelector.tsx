@@ -26,7 +26,7 @@ export default function AmenityCustomSelector() {
 								e.stopPropagation();
 								dispatch(deSelectAmenity(item.id))
 							}}
-								className="border-[1px] border-primary rounded-full p-[2px] text-[1.3rem]"
+								className="border-[1px] border-primary hover:border-red-300 hover:bg-red-100 hover:text-red-500 rounded-full p-[2px] text-[1.3rem]"
 								icon="oui:cross"
 							/>
 							<p className='bg-primary h-[70%] w-[1px]'></p>
