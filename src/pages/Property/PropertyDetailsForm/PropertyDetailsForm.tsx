@@ -6,6 +6,14 @@ import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import ProvestorInput from '../../../components/Form/ProvestorInput';
 import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
 import ProvestorDatePicker from '../../../components/Form/ProvestorDatePicker';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import {
+	decreaseAmenity,
+	hideAmenityInput,
+	increaseAmenity,
+	showAmenityInput,
+	toggleAmenity,
+} from '../../../redux/slices/amenitySelectSlice';
 import { useState } from 'react';
 
 const propertyTypeOptions = [
@@ -21,14 +29,14 @@ const propertyTypeOptions = [
 
 export default function PropertyDetailsForm() {
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
+	const { amenities, amenityMenuVisible, amenityInputVisible } = useAppSelector(
+		state => state.amenitySelect
+	);
+	const [amenityTitle, setAmenityTitle] = useState('');
+
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
-	};
-
-	// Custom Select Logics
-	const [visible, setVisible] = useState(true);
-	const handleToggleVisible = () => {
-		setVisible(!visible);
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
@@ -55,17 +63,10 @@ export default function PropertyDetailsForm() {
 						options={propertyTypeOptions}
 						placeholder="Select Property"
 					/>
-					{/* <ProvestorSelect
-						name="amenities"
-						label="Amenities"
-						required={true}
-						options={propertyTypeOptions}
-						placeholder="Select Property"
-					/> */}
 
 					<div className="relative">
 						{/* Controller  */}
-						<div onClick={handleToggleVisible}>
+						<div onClick={() => dispatch(toggleAmenity())}>
 							<h5 className="mb-[0.5rem]">
 								Amenities <span className="text-red-500">*</span>
 							</h5>
@@ -78,69 +79,78 @@ export default function PropertyDetailsForm() {
 						</div>
 
 						{/* Options  */}
-						{visible && (
+						{amenityMenuVisible && (
 							<div
 								style={{ boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.15)' }}
-								className="mt-2 p-[1rem] bg-white absolute w-full space-y-[1rem]"
+								className="mt-2 p-[1rem] bg-white absolute w-full"
 							>
-								{/* option-1  */}
-								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
-									<div className="flex items-center gap-2">
-										<Icon
-											className="text-[1.5rem]"
-											icon="material-symbols-light:bed-outline"
-										/>
-										<p>Beds</p>
-									</div>
-									<div className="flex items-center gap-5">
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-minus" />
+								{/* options  */}
+								{amenities
+									.filter(item => !item.selected)
+									.map(item => (
+										<div
+											onClick={() => alert('Hi')}
+											className="flex justify-between items-center select-none hover:bg-gray-200 border-b-[1px] border-[#E5E5E5] p-4 cursor-pointer"
+										>
+											<h5>{item.title}</h5>
+											<div className="flex items-center gap-5">
+												<button
+													disabled={item.quantity ? false : true}
+													onClick={e => {
+														e.stopPropagation();
+														dispatch(decreaseAmenity(item.id));
+													}}
+													className={`rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white ${
+														item.quantity == 0 ? 'bg-gray-500' : 'bg-primary'
+													}`}
+												>
+													<Icon icon="ic:baseline-minus" />
+												</button>
+												<div className="w-[30px] text-center">
+													{item.quantity}
+												</div>
+												<button
+													onClick={e => {
+														e.stopPropagation();
+														dispatch(increaseAmenity(item.id));
+													}}
+													className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white"
+												>
+													<Icon icon="ic:baseline-plus" />
+												</button>
+											</div>
+										</div>
+									))}
+
+								<div className="mt-3">
+									{amenityInputVisible ? (
+										<div className="flex items-center bg-red-500 h-[40px] mt-3">
+											<input
+												className="border-[1px] border-gray-300 px-4 w-full outline-none h-full"
+												placeholder="Enter amenity title"
+												type="text"
+												onChange={e => setAmenityTitle(e.target.value)}
+											/>
+											<button
+												onClick={() => {
+													dispatch(hideAmenityInput());
+												}}
+												className="flex items-center justify-center text-white select-none gap-1 bg-primary w-[80px] h-full"
+											>
+												<Icon className="text-[1rem]" icon="ic:baseline-plus" />
+												<span>Add</span>
+											</button>
+										</div>
+									) : (
+										<button
+											onClick={() => dispatch(showAmenityInput())}
+											className="flex items-center justify-center text-white select-none gap-2 bg-primary w-full py-2 mt-3"
+										>
+											<Icon className="text-[1.5rem]" icon="ic:baseline-plus" />
+											<span>Add New</span>
 										</button>
-										<div>0</div>
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-plus" />
-										</button>
-									</div>
+									)}
 								</div>
-								{/* option-2  */}
-								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
-									<div className="flex items-center gap-2">
-										<Icon className="text-[1.3rem]" icon="solar:bath-outline" />
-										<p>Baths</p>
-									</div>
-									<div className="flex items-center gap-5">
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-minus" />
-										</button>
-										<div>0</div>
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-plus" />
-										</button>
-									</div>
-								</div>
-								{/* option-3  */}
-								<div className="flex justify-between items-center select-none border-b-[1px] border-[#E5E5E5] pb-5">
-									<div className="flex items-center gap-2">
-										<Icon
-											className="text-[1.3rem]"
-											icon="fluent:vehicle-car-parking-20-regular"
-										/>
-										<p>Parking</p>
-									</div>
-									<div className="flex items-center gap-5">
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-minus" />
-										</button>
-										<div>0</div>
-										<button className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white">
-											<Icon icon="ic:baseline-plus" />
-										</button>
-									</div>
-								</div>
-								<button className='flex items-center justify-center text-white select-none gap-2 bg-primary w-full py-2'>
-									<Icon className='text-[1.5rem]' icon="ic:baseline-plus" />
-									<span>Add</span>
-								</button>
 							</div>
 						)}
 					</div>

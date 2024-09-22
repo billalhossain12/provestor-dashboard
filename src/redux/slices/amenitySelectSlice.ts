@@ -1,47 +1,79 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-type TAmenitySelect = {
+type TAmenity = {
 	id: string;
-	amenity: string;
+	title: string;
 	quantity: number;
 	selected: boolean;
 };
 
-const initialState: TAmenitySelect[] = [
-	{
-		id: '123456789',
-		amenity: 'Beds',
-		quantity: 0,
-		selected: false,
-	},
-];
+type TAmenitySelect = {
+	amenities: TAmenity[];
+	amenityMenuVisible: boolean;
+	amenityInputVisible: boolean;
+};
+
+const initialState: TAmenitySelect = {
+	amenityMenuVisible: false,
+	amenityInputVisible: false,
+	amenities: [
+		{
+			id: uuidv4(),
+			title: 'Beds',
+			quantity: 0,
+			selected: false,
+		},
+	],
+};
 
 const amenitySelectSlice = createSlice({
 	name: 'amenitySelect',
 	initialState: initialState,
 	reducers: {
+		toggleAmenity(state) {
+			state.amenityMenuVisible = !state.amenityMenuVisible;
+		},
+
+		hideAmenity(state) {
+			state.amenityMenuVisible = false;
+		},
+
+		showAmenityInput(state) {
+			state.amenityInputVisible = true;
+		},
+
+		hideAmenityInput(state) {
+			state.amenityInputVisible = false;
+		},
+
 		addAmenity(state, action) {
-			state.push({
+			state.amenities.push({
 				id: uuidv4(),
-				amenity: action.payload,
+				title: action.payload,
 				quantity: 0,
 				selected: false,
 			});
 		},
+
 		deleteAmenity(state, action) {
-			return state.filter(item => item.id !== action.payload);
+			const filteredAmenities = state.amenities.filter(
+				item => item.id !== action.payload
+			);
+			state.amenities = filteredAmenities;
 		},
+
 		increaseAmenity(state, action) {
-			state.map(item => {
+			state.amenities.map(item => {
 				if (item.id === action.payload) {
 					item.quantity = item.quantity + 1;
 				}
 				return item;
 			});
 		},
+
 		decreaseAmenity(state, action) {
-			state.map(item => {
+			state.amenities.map(item => {
 				if (item.id === action.payload) {
 					item.quantity = item.quantity - 1;
 				}
@@ -51,7 +83,15 @@ const amenitySelectSlice = createSlice({
 	},
 });
 
-export const { addAmenity, deleteAmenity, increaseAmenity, decreaseAmenity } =
-	amenitySelectSlice.actions;
+export const {
+	addAmenity,
+	deleteAmenity,
+	increaseAmenity,
+	decreaseAmenity,
+	toggleAmenity,
+	hideAmenity,
+    showAmenityInput,
+    hideAmenityInput
+} = amenitySelectSlice.actions;
 
 export default amenitySelectSlice.reducer;
