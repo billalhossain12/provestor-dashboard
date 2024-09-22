@@ -2,13 +2,12 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import ProvestorForm from '../../../components/Form/ProvestorForm';
-import ProvestorInput from '../../../components/Form/ProvestorInput';
 
 export default function RiskAndFinancingForm() {
 	const navigate = useNavigate();
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
-		navigate('/property/add-porperty/risk-and-financing-details');
+		navigate('/property/add-porperty/documents');
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
@@ -28,9 +27,6 @@ export default function RiskAndFinancingForm() {
 
 			<ProvestorForm onSubmit={handleSubmit}>
 				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
-          <div>
-            <ProvestorInput name='riskScale' type='text' label='Risk Scale' placeholder='Select'/>
-          </div>
 					<button className="bg-primary text-white px-[3rem] text-[18px] font-bold py-2">
 						Nex
 					</button>

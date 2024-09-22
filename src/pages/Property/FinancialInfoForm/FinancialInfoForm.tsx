@@ -7,6 +7,7 @@ export default function FinancialInfoForm() {
 	const navigate = useNavigate();
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
+		navigate('/property/add-porperty/risk-and-financing-details');
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
