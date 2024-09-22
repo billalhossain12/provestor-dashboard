@@ -1,21 +1,12 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { useNavigate } from 'react-router-dom';
-import ProvestorForm from '../../../components/Form/ProvestorForm';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
-import ProvestorSelect from '../../../components/Form/ProvestorSelect';
-import ProvestorInput from '../../../components/Form/ProvestorInput';
-import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
+import { useNavigate } from 'react-router-dom';
 import ProvestorDatePicker from '../../../components/Form/ProvestorDatePicker';
-import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
-import {
-	addAmenity,
-	decreaseAmenity,
-	hideAmenityInput,
-	increaseAmenity,
-	showAmenityInput,
-	toggleAmenity,
-} from '../../../redux/slices/amenitySelectSlice';
-import { useState } from 'react';
+import ProvestorForm from '../../../components/Form/ProvestorForm';
+import ProvestorInput from '../../../components/Form/ProvestorInput';
+import ProvestorSelect from '../../../components/Form/ProvestorSelect';
+import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
+import AmenityCustomSelector from './AmenityCustomSelector/AmenityCustomSelector';
 
 const propertyTypeOptions = [
 	{
@@ -30,12 +21,6 @@ const propertyTypeOptions = [
 
 export default function PropertyDetailsForm() {
 	const navigate = useNavigate();
-	const dispatch = useAppDispatch();
-	const { amenities, amenityMenuVisible, amenityInputVisible } = useAppSelector(
-		state => state.amenitySelect
-	);
-	const [amenityTitle, setAmenityTitle] = useState('');
-	const [showError, setShowError] = useState(false);
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
@@ -66,112 +51,7 @@ export default function PropertyDetailsForm() {
 						placeholder="Select Property"
 					/>
 
-					<div className="relative">
-						{/* Controller  */}
-						<div onClick={() => dispatch(toggleAmenity())}>
-							<h5 className="mb-[0.5rem]">
-								Amenities <span className="text-red-500">*</span>
-							</h5>
-							<div className="border-[1px] border-[#D9D9D9] px-[12px] py-[21px] w-full cursor-pointer relative">
-								<div className="absolute right-1 top-2 text-[1.5rem] flex items-center gap-2">
-									<p className="bg-gray-400 w-[1px] h-[20px]"></p>
-									<Icon icon="iconamoon:arrow-down-2" />
-								</div>
-							</div>
-						</div>
-
-						{/* Options  */}
-						{amenityMenuVisible && (
-							<div
-								style={{ boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.15)' }}
-								className="mt-2 p-[1rem] bg-white absolute w-full"
-							>
-								{/* options  */}
-								{amenities
-									.filter(item => !item.selected)
-									.map(item => (
-										<div
-											onClick={() => alert('Hi')}
-											className="flex justify-between items-center select-none hover:bg-gray-200 border-b-[1px] border-[#E5E5E5] p-4 cursor-pointer"
-										>
-											<h5>{item.title}</h5>
-											<div className="flex items-center gap-5">
-												<button
-													disabled={item.quantity ? false : true}
-													onClick={e => {
-														e.stopPropagation();
-														dispatch(decreaseAmenity(item.id));
-													}}
-													className={`rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white ${
-														item.quantity == 0 ? 'bg-gray-500' : 'bg-primary'
-													}`}
-												>
-													<Icon icon="ic:baseline-minus" />
-												</button>
-												<div className="w-[30px] text-center">
-													{item.quantity}
-												</div>
-												<button
-													onClick={e => {
-														e.stopPropagation();
-														dispatch(increaseAmenity(item.id));
-													}}
-													className="bg-primary rounded-full h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white"
-												>
-													<Icon icon="ic:baseline-plus" />
-												</button>
-											</div>
-										</div>
-									))}
-
-
-									{/* Add New Amenity  */}
-								<div className="mt-3">
-									{amenityInputVisible ? (
-										<div className="mt-3">
-											<input
-												className="px-4 py-[10px] w-full outline-none border-[1px] border-gray-300 h-full"
-												placeholder="Enter amenity title"
-												type="text"
-												onChange={e => setAmenityTitle(e.target.value)}
-											/>
-											{showError && !amenityTitle && <p className='text-red-500 text-[14px] text-right'>Amenity title is required*</p>}
-											<div className='flex items-center gap-5 justify-end mt-3'>
-											<button
-												onClick={() => {
-													dispatch(hideAmenityInput());
-												}}
-												className="flex items-center justify-center px-4 py-2 text-white select-none gap-1 bg-red-500 w-[80px] h-full"
-											>
-												<span>Cancel</span>
-											</button>
-											<button
-												onClick={() => {
-													if(!amenityTitle){
-														return setShowError(true)
-													}
-													dispatch(hideAmenityInput());
-													dispatch(addAmenity(amenityTitle))
-												}}
-												className="flex items-center justify-center px-4 py-2 text-white select-none gap-1 bg-primary w-[80px] h-full"
-											>
-												<span>Add</span>
-											</button>
-											</div>
-										</div>
-									) : (
-										<button
-											onClick={() => dispatch(showAmenityInput())}
-											className="flex items-center justify-center text-white select-none gap-2 bg-primary w-full py-2 mt-3"
-										>
-											<Icon className="text-[1.5rem]" icon="ic:baseline-plus" />
-											<span>Add New</span>
-										</button>
-									)}
-								</div>
-							</div>
-						)}
-					</div>
+					<AmenityCustomSelector />
 
 					<ProvestorInput
 						type="text"
