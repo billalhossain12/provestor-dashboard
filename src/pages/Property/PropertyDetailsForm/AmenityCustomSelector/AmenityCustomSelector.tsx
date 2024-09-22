@@ -17,7 +17,8 @@ export default function AmenityCustomSelector() {
 				<h5 className="mb-[0.5rem]">
 					Amenities <span className="text-red-500">*</span>
 				</h5>
-				<div className="border-[1px] border-[#D9D9D9] p-[3px] min-h-[44px] w-full cursor-pointer flex items-center flex-wrap gap-1">
+				<div className='flex items-center justify-between gap-1 border-[1px] border-[#D9D9D9] p-[3px] min-h-[44px] w-full cursor-pointer'>
+				<div className="flex items-center flex-wrap gap-1">
 					{
 						amenities.filter(item => item.selected).map(item => (<div key={item.id} className="border-[1px] select-none h-[35px] border-primary px-2 py-1 bg-[#24B24B26] text-primary flex items-center gap-2">
 							<Icon
@@ -30,11 +31,13 @@ export default function AmenityCustomSelector() {
 							/>
 							<p className='bg-primary h-[70%] w-[1px]'></p>
 							<div>
-								<span>{item.title}</span>
 								<span>{item.quantity}</span>
+								<span className='ml-2'>{item.title}</span>
 							</div>
 						</div>))
 					}
+				</div>
+				<Icon className='min-w-[1.5rem] min-h-[1.5rem]' icon="ic:baseline-keyboard-arrow-down" />
 				</div>
 			</div>
 
