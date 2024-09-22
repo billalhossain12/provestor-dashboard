@@ -26,6 +26,9 @@ import EditNotificationForm from '../pages/Notifications/EditNotificationForm/Ed
 import PropertyPanel from '../pages/Property/PropertyPanel';
 import PropertyView from '../pages/Property/PropertyView/PropertyView';
 import PropertyDetailsForm from '../pages/Property/PropertyDetailsForm/PropertyDetailsForm';
+import FinancialInfoForm from '../pages/Property/FinancialInfoForm/FinancialInfoForm';
+import RiskAndFinancingForm from '../pages/Property/RiskAndFinancingForm/RiskAndFinancingForm';
+import DocumentsForm from '../pages/Property/DocumentsForm/DocumentsForm';
 
 export const router = createBrowserRouter([
 	{
@@ -74,6 +77,18 @@ export const router = createBrowserRouter([
 					{
 						path:'add-porperty/property-details',
 						element:<PropertyDetailsForm/>
+					},
+					{
+						path:'add-porperty/financial-informations',
+						element:<FinancialInfoForm/>
+					},
+					{
+						path:'add-porperty/risk-and-financing-details',
+						element:<RiskAndFinancingForm/>
+					},
+					{
+						path:'add-porperty/documents',
+						element:<DocumentsForm/>
 					},
 				]
 			},

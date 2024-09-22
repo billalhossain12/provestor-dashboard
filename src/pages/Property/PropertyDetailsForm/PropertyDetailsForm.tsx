@@ -29,6 +29,7 @@ export default function PropertyDetailsForm() {
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log({ ...data, amenities: selectedAmenities });
+		navigate("/property/add-porperty/financial-informations")
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
