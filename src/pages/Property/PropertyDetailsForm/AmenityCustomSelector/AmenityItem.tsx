@@ -25,6 +25,7 @@ export default function AmenityItem({ item }: TAmenity) {
 			<h5>{item.title}</h5>
 			<div className="flex items-center gap-5">
 				<button
+				    type='button'
 					disabled={item.quantity ? false : true}
 					onClick={e => {
 						e.stopPropagation();
@@ -38,6 +39,7 @@ export default function AmenityItem({ item }: TAmenity) {
 				</button>
 				<div className="w-[30px] text-center">{item.quantity}</div>
 				<button
+				   type='button'
 					onClick={e => {
 						e.stopPropagation();
 						dispatch(increaseAmenity(item.id));
