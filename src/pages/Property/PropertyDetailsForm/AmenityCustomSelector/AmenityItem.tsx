@@ -19,13 +19,16 @@ export default function AmenityItem({ item }: TAmenity) {
 	const dispatch = useAppDispatch();
 	return (
 		<div
-			onClick={() => dispatch(selectAmenity(item.id))}
+			onClick={e => {
+				e.stopPropagation();
+				dispatch(selectAmenity(item.id));
+			}}
 			className="flex justify-between items-center select-none hover:bg-gray-200 border-b-[1px] border-[#E5E5E5] p-4 cursor-pointer"
 		>
 			<h5>{item.title}</h5>
 			<div className="flex items-center gap-5">
 				<button
-				    type='button'
+					type="button"
 					disabled={item.quantity ? false : true}
 					onClick={e => {
 						e.stopPropagation();
@@ -39,7 +42,7 @@ export default function AmenityItem({ item }: TAmenity) {
 				</button>
 				<div className="w-[30px] text-center">{item.quantity}</div>
 				<button
-				   type='button'
+					type="button"
 					onClick={e => {
 						e.stopPropagation();
 						dispatch(increaseAmenity(item.id));

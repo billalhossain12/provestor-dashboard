@@ -13,7 +13,10 @@ export default function AmenityCustomSelector() {
 	return (
 		<div className="relative">
 			{/* Controller  */}
-			<div onClick={() => dispatch(toggleAmenity())}>
+			<div onClick={(e) => {
+				e.stopPropagation()
+				dispatch(toggleAmenity())
+			}}>
 				<h5 className="mb-[0.5rem]">
 					Amenities <span className="text-red-500">*</span>
 				</h5>
