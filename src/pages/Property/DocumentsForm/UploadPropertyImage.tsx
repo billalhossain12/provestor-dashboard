@@ -80,7 +80,7 @@ export default function UploadPropertyImage({
 						</div>
 					))}
 					{!propertyImages.length && (
-						<p className="text-gray-500 text-center py-10">
+						<p className="text-gray-500 py-5">
 							No images are uploaded yet.
 						</p>
 					)}

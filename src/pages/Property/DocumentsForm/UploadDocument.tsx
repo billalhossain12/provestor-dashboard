@@ -80,7 +80,7 @@ export default function UploadDocument({ showError }: TUploadDocumentProps) {
 						</div>
 					))}
 					{!propertyDocuments.length && (
-						<p className="text-gray-500 text-center py-10">
+						<p className="text-gray-500 py-5">
 							No documents are uploaded yet.
 						</p>
 					)}
