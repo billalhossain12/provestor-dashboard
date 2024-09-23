@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { FormStepper } from '../../components/FormStepper';
 
 export default function PropertyFormPanel() {
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ export default function PropertyFormPanel() {
 				</h3>
 			</div>
 
-			<h3 className='mb-[2rem]'>Form Stepper</h3>
+			<FormStepper/>
 
 			<Outlet />
 		</main>
