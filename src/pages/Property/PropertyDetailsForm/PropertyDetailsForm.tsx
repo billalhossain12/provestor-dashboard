@@ -45,7 +45,7 @@ export default function PropertyDetailsForm() {
 					Add Property
 				</h3>
 			</div>
-			<p className="mb-[2rem]">Form Stepper here.....</p>
+			<p className="mb-[2rem]">Property Details Stepper</p>
 
 			<ProvestorForm onSubmit={handleSubmit}>
 				<div className="grid md:grid-cols-3 grid-cols-1 gap-x-[2.5rem] gap-y-[1.5rem]">
