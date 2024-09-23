@@ -37,7 +37,7 @@ export default function DocumentsForm() {
 						type="submit"
 						className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
 					>
-						Nex
+						Submit
 					</button>
 				</div>
 			</ProvestorForm>
