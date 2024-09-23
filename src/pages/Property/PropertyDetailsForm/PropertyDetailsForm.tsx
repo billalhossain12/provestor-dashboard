@@ -29,7 +29,7 @@ export default function PropertyDetailsForm() {
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log({ ...data, amenities: selectedAmenities });
-		navigate("/property/add-porperty/financial-informations")
+		navigate('/property/add-porperty/financial-informations');
 	};
 	return (
 		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
@@ -207,8 +207,11 @@ export default function PropertyDetailsForm() {
 							required={true}
 						/>
 					</div>
-					<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
-						<button className="bg-primary text-white px-[3rem] text-[18px] font-bold py-2">
+					<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.2rem] gap-5">
+						<button
+							type="submit"
+							className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
+						>
 							Nex
 						</button>
 					</div>
