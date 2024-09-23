@@ -25,8 +25,18 @@ export default function DocumentsForm() {
 			<p className="mb-[2rem]">Form Stepper here.....</p>
 
 			<ProvestorForm onSubmit={handleSubmit}>
-				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
-					<button className="bg-primary text-white px-[3rem] text-[18px] font-bold py-2">
+			<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[1.5rem] gap-5">
+					<button
+						onClick={() => navigate(-1)}
+						type="button"
+						className="hover:bg-primary text-black hover:text-white border-[1px] border-[#0E0E0E] hover:border-primary duration-200 text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
+					>
+						Previous
+					</button>
+					<button
+						type="submit"
+						className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
+					>
 						Nex
 					</button>
 				</div>
