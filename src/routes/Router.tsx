@@ -23,12 +23,13 @@ import NotFound from '../pages/NotFound/NotFound';
 import NotificationPanel from '../pages/Notifications/NotificationPanel';
 import SendNotificationForm from '../pages/Notifications/SendNotificationForm/SendNotificationForm';
 import EditNotificationForm from '../pages/Notifications/EditNotificationForm/EditNotificationForm';
-import PropertyPanel from '../pages/Property/PropertyPanel';
 import PropertyView from '../pages/Property/PropertyView/PropertyView';
 import PropertyDetailsForm from '../pages/Property/PropertyDetailsForm/PropertyDetailsForm';
 import FinancialInfoForm from '../pages/Property/FinancialInfoForm/FinancialInfoForm';
 import RiskAndFinancingForm from '../pages/Property/RiskAndFinancingForm/RiskAndFinancingForm';
 import DocumentsForm from '../pages/Property/DocumentsForm/DocumentsForm';
+import PropertyViewPanel from '../pages/Property/PropertyViewPanel';
+import PropertyFormPanel from '../pages/Property/PropertyFormPanel';
 
 export const router = createBrowserRouter([
 	{
@@ -64,7 +65,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'property',
-				element: <PropertyPanel />,
+				element: <PropertyViewPanel />,
 				children:[
 					{
 						path:'',
@@ -74,20 +75,26 @@ export const router = createBrowserRouter([
 						path:'view/:propertyId',
 						element:<PropertyView/>
 					},
+				]
+			},
+			{
+				path: 'property/add-porperty',
+				element: <PropertyFormPanel />,
+				children:[
 					{
-						path:'add-porperty/property-details',
+						path:'property-details',
 						element:<PropertyDetailsForm/>
 					},
 					{
-						path:'add-porperty/financial-informations',
+						path:'financial-informations',
 						element:<FinancialInfoForm/>
 					},
 					{
-						path:'add-porperty/risk-and-financing-details',
+						path:'risk-and-financing-details',
 						element:<RiskAndFinancingForm/>
 					},
 					{
-						path:'add-porperty/documents',
+						path:'documents',
 						element:<DocumentsForm/>
 					},
 				]

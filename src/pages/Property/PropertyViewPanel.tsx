@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-export default function PropertyPanel() {
+export default function PropertyViewPanel() {
 	return (
 		<main>
 			<Outlet />
