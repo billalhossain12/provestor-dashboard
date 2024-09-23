@@ -5,8 +5,13 @@ import ProvestorForm from '../../../components/Form/ProvestorForm';
 import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 
 const riskScaleOptions = [
-	{ label: 'High', value: 'High' },
+	{ label: 'Low', value: 'Low' },
 	{ label: 'Medium', value: 'Medium' },
+	{ label: 'High', value: 'High' },
+];
+const strategicFinancingOptions = [
+	{ label: 'Yes', value: 'Yes' },
+	{ label: 'No', value: 'No' },
 ];
 
 export default function RiskAndFinancingForm() {
@@ -33,7 +38,8 @@ export default function RiskAndFinancingForm() {
 
 			<ProvestorForm onSubmit={handleSubmit}>
 				<div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-[2.5rem] gap-y-[1.5rem]">
-					<ProvestorSelect name="riskScale" options={riskScaleOptions} />
+					<ProvestorSelect name="riskScale" label='Risk Scale' required={true} options={riskScaleOptions} />
+					<ProvestorSelect name='strategicFinancing' label="Strategic Financing" required={true} options={strategicFinancingOptions} />
 				</div>
 
 				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
