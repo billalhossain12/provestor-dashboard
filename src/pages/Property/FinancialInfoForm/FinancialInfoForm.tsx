@@ -58,8 +58,11 @@ export default function FinancialInfoForm() {
 						placeholder="12345"
 					/>
 				</div>
-				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[0.5rem]">
-					<button className="bg-primary text-white px-[3rem] text-[18px] font-bold py-2">
+				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[1.5rem] gap-5">
+					<button type='button' className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center">
+						Previous
+					</button>
+					<button type='submit' className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center">
 						Nex
 					</button>
 				</div>
