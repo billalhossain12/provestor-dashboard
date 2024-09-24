@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
-
 type TFormConfig = {
-	defaultValues?: Record<string, string | number | boolean | object | [] | File>;
+	defaultValues?: Record<string, any>;
 	resolver?: any;
 };
 
@@ -35,9 +35,3 @@ export default function ProvestorForm({
 		</FormProvider>
 	);
 }
-
-
-
-
-
-
