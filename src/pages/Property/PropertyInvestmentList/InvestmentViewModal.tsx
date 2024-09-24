@@ -8,10 +8,11 @@ import {
 import { Icon } from '@iconify/react/dist/iconify.js';
 
 export function InvestmentViewModal() {
-	const [size, setSize] = useState<string | null>(null);
+	const [size, setSize] = useState<
+		'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xs' | null
+	>(null);
 
-	const handleOpen = (value: string | null) => setSize(value);
-	const props: any = undefined;
+	const handleOpen = (value: 'xl' | null) => setSize(value);
 
 	return (
 		<>
@@ -33,9 +34,8 @@ export function InvestmentViewModal() {
 					}
 					size={size || 'md'}
 					handler={handleOpen}
-					{...props}
 				>
-					<DialogHeader className="flex justify-end" {...props}>
+					<DialogHeader className="flex justify-end">
 						<div
 							onClick={() => handleOpen(null)}
 							className="text-red-500 bg-[#FF00231A] border-[1px] border-red-500 cursor-pointer p-1 hover:bg-red-500 hover:text-white duration-300"
@@ -43,10 +43,7 @@ export function InvestmentViewModal() {
 							<Icon icon="gridicons:cross" />
 						</div>
 					</DialogHeader>
-					<DialogBody
-						{...props}
-						className="lg:h-auto h-[22rem] overflow-scroll"
-					>
+					<DialogBody className="lg:h-auto h-[22rem] overflow-scroll">
 						<h3 className="md:text-[28px] text-[1.2rem] font-bold md:mb-[2.5rem] mb-[1rem]">
 							Transaction ID : 1238971293
 						</h3>
@@ -107,21 +104,22 @@ export function InvestmentViewModal() {
 									Payment status
 								</h5>
 								<div className="md:text-[1.5rem] text-[1rem] font-semibold text-[#037847] flex items-center gap-2 bg-[#ECFDF3] px-4 py-2 rounded-full w-[160px]">
-                                    <p className='rounded-full w-[8px] h-[8px] bg-[#037847]'></p>
+									<p className="rounded-full w-[8px] h-[8px] bg-[#037847]"></p>
 									<p>Success</p>
 								</div>
 							</div>
 						</div>
 					</DialogBody>
-					<DialogFooter {...props}>
+					<DialogFooter>
 						<button
-							{...props}
-							variant="gradient"
 							color=""
 							onClick={() => handleOpen(null)}
 							className="bg-primary text-white px-4 py-2 flex items-center gap-2"
 						>
-							<Icon className='text-[1.3rem]' icon="material-symbols:cloud-download" />
+							<Icon
+								className="text-[1.3rem]"
+								icon="material-symbols:cloud-download"
+							/>
 							<span>Download Receipt</span>
 						</button>
 					</DialogFooter>

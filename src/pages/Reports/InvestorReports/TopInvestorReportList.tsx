@@ -79,146 +79,146 @@ const customStyles: TableStyles = {
 
 const data = [
 	{
-	  investorId: 'X7y8Z9a1',
-	  investorDetails: {
-		name: 'John Doe',
-		email: 'john.doe@example.com',
-		phone: '555-10002',
-	  },
-	  investedDetails: {
-		shares: 20,
-		invested: 60000,
-	  },
-	  onboardingDate: '2024-09-12',
-	  status: 'active',
+		investorId: 'X7y8Z9a1',
+		investorDetails: {
+			name: 'John Doe',
+			email: 'john.doe@example.com',
+			phone: '555-10002',
+		},
+		investedDetails: {
+			shares: 20,
+			invested: 60000,
+		},
+		onboardingDate: '2024-09-12',
+		status: 'active',
 	},
 	{
-	  investorId: 'B4c5D6e7',
-	  investorDetails: {
-		name: 'Jane Smith',
-		email: 'jane.smith@example.com',
-		phone: '555-10003',
-	  },
-	  investedDetails: {
-		shares: 10,
-		invested: 30000,
-	  },
-	  onboardingDate: '2024-09-13',
-	  status: 'inactive',
+		investorId: 'B4c5D6e7',
+		investorDetails: {
+			name: 'Jane Smith',
+			email: 'jane.smith@example.com',
+			phone: '555-10003',
+		},
+		investedDetails: {
+			shares: 10,
+			invested: 30000,
+		},
+		onboardingDate: '2024-09-13',
+		status: 'inactive',
 	},
 	{
-	  investorId: 'F1g2H3i4',
-	  investorDetails: {
-		name: 'Michael Johnson',
-		email: 'michael.j@example.com',
-		phone: '555-10004',
-	  },
-	  investedDetails: {
-		shares: 25,
-		invested: 75000,
-	  },
-	  onboardingDate: '2024-09-14',
-	  status: 'active',
+		investorId: 'F1g2H3i4',
+		investorDetails: {
+			name: 'Michael Johnson',
+			email: 'michael.j@example.com',
+			phone: '555-10004',
+		},
+		investedDetails: {
+			shares: 25,
+			invested: 75000,
+		},
+		onboardingDate: '2024-09-14',
+		status: 'active',
 	},
 	{
-	  investorId: 'J5k6L7m8',
-	  investorDetails: {
-		name: 'Emily Davis',
-		email: 'emily.davis@example.com',
-		phone: '555-10005',
-	  },
-	  investedDetails: {
-		shares: 30,
-		invested: 90000,
-	  },
-	  onboardingDate: '2024-09-15',
-	  status: 'inactive',
+		investorId: 'J5k6L7m8',
+		investorDetails: {
+			name: 'Emily Davis',
+			email: 'emily.davis@example.com',
+			phone: '555-10005',
+		},
+		investedDetails: {
+			shares: 30,
+			invested: 90000,
+		},
+		onboardingDate: '2024-09-15',
+		status: 'inactive',
 	},
 	{
-	  investorId: 'N8o9P1q2',
-	  investorDetails: {
-		name: 'Chris Wilson',
-		email: 'chris.wilson@example.com',
-		phone: '555-10006',
-	  },
-	  investedDetails: {
-		shares: 12,
-		invested: 36000,
-	  },
-	  onboardingDate: '2024-09-16',
-	  status: 'active',
+		investorId: 'N8o9P1q2',
+		investorDetails: {
+			name: 'Chris Wilson',
+			email: 'chris.wilson@example.com',
+			phone: '555-10006',
+		},
+		investedDetails: {
+			shares: 12,
+			invested: 36000,
+		},
+		onboardingDate: '2024-09-16',
+		status: 'active',
 	},
 	{
-	  investorId: 'R2s3T4u5',
-	  investorDetails: {
-		name: 'Anna Brown',
-		email: 'anna.brown@example.com',
-		phone: '555-10007',
-	  },
-	  investedDetails: {
-		shares: 18,
-		invested: 54000,
-	  },
-	  onboardingDate: '2024-09-17',
-	  status: 'inactive',
+		investorId: 'R2s3T4u5',
+		investorDetails: {
+			name: 'Anna Brown',
+			email: 'anna.brown@example.com',
+			phone: '555-10007',
+		},
+		investedDetails: {
+			shares: 18,
+			invested: 54000,
+		},
+		onboardingDate: '2024-09-17',
+		status: 'inactive',
 	},
 	{
-	  investorId: 'V5w6X7y8',
-	  investorDetails: {
-		name: 'David Lee',
-		email: 'david.lee@example.com',
-		phone: '555-10008',
-	  },
-	  investedDetails: {
-		shares: 22,
-		invested: 66000,
-	  },
-	  onboardingDate: '2024-09-18',
-	  status: 'active',
+		investorId: 'V5w6X7y8',
+		investorDetails: {
+			name: 'David Lee',
+			email: 'david.lee@example.com',
+			phone: '555-10008',
+		},
+		investedDetails: {
+			shares: 22,
+			invested: 66000,
+		},
+		onboardingDate: '2024-09-18',
+		status: 'active',
 	},
 	{
-	  investorId: 'Z9a1B2c3',
-	  investorDetails: {
-		name: 'Sarah Moore',
-		email: 'sarah.moore@example.com',
-		phone: '555-10009',
-	  },
-	  investedDetails: {
-		shares: 14,
-		invested: 42000,
-	  },
-	  onboardingDate: '2024-09-19',
-	  status: 'inactive',
+		investorId: 'Z9a1B2c3',
+		investorDetails: {
+			name: 'Sarah Moore',
+			email: 'sarah.moore@example.com',
+			phone: '555-10009',
+		},
+		investedDetails: {
+			shares: 14,
+			invested: 42000,
+		},
+		onboardingDate: '2024-09-19',
+		status: 'inactive',
 	},
 	{
-	  investorId: 'D3e4F5g6',
-	  investorDetails: {
-		name: 'James Taylor',
-		email: 'james.taylor@example.com',
-		phone: '555-10010',
-	  },
-	  investedDetails: {
-		shares: 28,
-		invested: 84000,
-	  },
-	  onboardingDate: '2024-09-20',
-	  status: 'active',
+		investorId: 'D3e4F5g6',
+		investorDetails: {
+			name: 'James Taylor',
+			email: 'james.taylor@example.com',
+			phone: '555-10010',
+		},
+		investedDetails: {
+			shares: 28,
+			invested: 84000,
+		},
+		onboardingDate: '2024-09-20',
+		status: 'active',
 	},
 	{
-	  investorId: 'H7i8J9k1',
-	  investorDetails: {
-		name: 'Olivia Anderson',
-		email: 'olivia.anderson@example.com',
-		phone: '555-10011',
-	  },
-	  investedDetails: {
-		shares: 16,
-		invested: 48000,
-	  },
-	  onboardingDate: '2024-09-21',
-	  status: 'inactive',
-	}
-  ];
+		investorId: 'H7i8J9k1',
+		investorDetails: {
+			name: 'Olivia Anderson',
+			email: 'olivia.anderson@example.com',
+			phone: '555-10011',
+		},
+		investedDetails: {
+			shares: 16,
+			invested: 48000,
+		},
+		onboardingDate: '2024-09-21',
+		status: 'inactive',
+	},
+];
 
 const columns: TableColumn<TDataRow>[] = [
 	{

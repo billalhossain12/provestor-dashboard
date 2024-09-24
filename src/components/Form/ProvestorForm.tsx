@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
+
 type TFormConfig = {
-	defaultValues?: Record<string, any>;
+	defaultValues?: Record<string, string | number | boolean | object | [] | File>;
 	resolver?: any;
 };
 
@@ -34,3 +35,9 @@ export default function ProvestorForm({
 		</FormProvider>
 	);
 }
+
+
+
+
+
+

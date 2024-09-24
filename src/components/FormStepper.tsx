@@ -2,7 +2,7 @@ import React from 'react';
 import { Stepper, Step, Button, Typography } from '@material-tailwind/react';
 import { Icon } from '@iconify/react/dist/iconify.js';
 
-export function FormStepper(props: any) {
+export function FormStepper() {
 	const [activeStep, setActiveStep] = React.useState(0);
 	const [isLastStep, setIsLastStep] = React.useState(false);
 	const [isFirstStep, setIsFirstStep] = React.useState(false);
@@ -13,14 +13,12 @@ export function FormStepper(props: any) {
 	return (
 		<div className="w-full px-14 py-2">
 			<Stepper
-				{...props}
 				activeStep={activeStep}
 				isLastStep={value => setIsLastStep(value)}
 				isFirstStep={value => setIsFirstStep(value)}
 				activeLineClassName="bg-primary"
 			>
 				<Step
-					{...props}
 					activeClassName="border-[1px] border-primary !bg-white"
 					completedClassName="!bg-primary"
 				>
@@ -33,7 +31,6 @@ export function FormStepper(props: any) {
 					)}
 					<div className="absolute -bottom-[2.5rem] w-max text-center">
 						<Typography
-							{...props}
 							className={`font-bold ${
 								activeStep === 0 ? 'text-black' : 'text-primary'
 							}`}
@@ -44,7 +41,6 @@ export function FormStepper(props: any) {
 				</Step>
 
 				<Step
-					{...props}
 					completedClassName="!bg-primary !text-primary"
 					activeClassName="!text-black border-primary !text-gray-900"
 					className="!bg-white border-[1px] border-gray-400 text-gray-400"
@@ -58,17 +54,13 @@ export function FormStepper(props: any) {
 						/>
 					)}
 					<div className="absolute -bottom-[2.5rem] w-max text-center">
-						<Typography
-							{...props}
-							className={`${activeStep >= 1 && 'font-semibold'}`}
-						>
+						<Typography className={`${activeStep >= 1 && 'font-semibold'}`}>
 							Financial Information and Analysis
 						</Typography>
 					</div>
 				</Step>
 
 				<Step
-					{...props}
 					completedClassName="!bg-primary !text-primary"
 					activeClassName="!text-black border-primary !text-gray-900"
 					className="!bg-white border-[1px] border-gray-400 text-gray-400"
@@ -82,17 +74,13 @@ export function FormStepper(props: any) {
 						/>
 					)}
 					<div className="absolute -bottom-[2.5rem] w-max text-center">
-						<Typography
-							{...props}
-							className={`${activeStep >= 2 && 'font-semibold'}`}
-						>
+						<Typography className={`${activeStep >= 2 && 'font-semibold'}`}>
 							Risk and Financing Details
 						</Typography>
 					</div>
 				</Step>
 
 				<Step
-					{...props}
 					completedClassName="!bg-primary !text-primary"
 					activeClassName="!text-black border-primary !text-gray-900"
 					className="!bg-white border-[1px] border-gray-400 text-gray-400"
@@ -106,10 +94,7 @@ export function FormStepper(props: any) {
 						/>
 					)}
 					<div className="absolute -bottom-[2.5rem] w-max text-center">
-						<Typography
-							{...props}
-							className={`${activeStep >= 3 && 'font-semibold'}`}
-						>
+						<Typography className={`${activeStep >= 3 && 'font-semibold'}`}>
 							Documents
 						</Typography>
 					</div>
