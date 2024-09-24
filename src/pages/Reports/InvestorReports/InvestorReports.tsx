@@ -1,5 +1,6 @@
 import InvestorReportBarchart from './InvestorReportBarchart';
 import InvestorReportCards from './InvestorReportCards';
+import InvestorReportPieChart from './InvestorReportPieChart';
 import TopInvestorReportList from './TopInvestorReportList';
 
 export default function InvestorReports() {
@@ -9,7 +10,10 @@ export default function InvestorReports() {
 				Investors Reports
 			</h3>
 			<InvestorReportCards />
+			<div className='flex items-center gap-10 mb-[2.5rem] bg-white'>
 			<InvestorReportBarchart />
+			<InvestorReportPieChart/>
+			</div>
 			<TopInvestorReportList />
 		</main>
 	);

@@ -25,7 +25,7 @@ const data = [
 	{ month: 'Dec', usersJoined: 120 },
 ];
 
-const renderTooltip = ({ active, label, payload }:TooltipProps<number, string>) => {
+const renderTooltip = ({ active, label, payload }:TooltipProps<string, number>) => {
 	console.log('Payload of the chart=====> ', active, label, payload);
 	if (active && payload?.length) {
 		return (
@@ -45,7 +45,7 @@ const renderTooltip = ({ active, label, payload }:TooltipProps<number, string>) 
 
 export default function InvestorReportBarchart() {
 	return (
-		<div className="p-4 rounded-lg border-gray-300 border w-full h-[550px]">
+		<div className="p-4 rounded-lg border-gray-300 border w-full flex-1 h-[500px]">
 			<header className="flex justify-between items-center pb-10">
 				<h3 className="text-[24px] font-medium">Investors</h3>
 				<p>Last Month</p>
@@ -63,7 +63,7 @@ export default function InvestorReportBarchart() {
 					<Bar
 						dataKey="usersJoined"
 						fill="#D3F2D1"
-						barSize={10}
+						barSize={8}
 						radius={5}
 						activeBar={<Rectangle fill="#25BF17" />}
 					/>
