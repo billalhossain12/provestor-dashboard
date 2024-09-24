@@ -4,7 +4,6 @@ import Dashboard from '../pages/Dashboard/Dashboard';
 import Investors from '../pages/Investors/Investors';
 import Property from '../pages/Property/Property';
 import Contact from '../pages/Contact/Contact';
-import Reports from '../pages/Reports/Reports';
 import Careers from '../pages/Careers/Careers';
 import Values from '../pages/Values/Values';
 import Settings from '../pages/Settings/Settings';
@@ -30,6 +29,9 @@ import RiskAndFinancingForm from '../pages/Property/RiskAndFinancingForm/RiskAnd
 import DocumentsForm from '../pages/Property/DocumentsForm/DocumentsForm';
 import PropertyViewPanel from '../pages/Property/PropertyViewPanel';
 import PropertyFormPanel from '../pages/Property/PropertyFormPanel';
+import ReportPanel from '../pages/Reports/ReportPanel';
+import InvestorReports from '../pages/Reports/InvestorReports/InvestorReports';
+import PropertyReports from '../pages/Reports/PropertyReports/PropertyReports';
 
 export const router = createBrowserRouter([
 	{
@@ -105,7 +107,17 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: 'reports',
-				element: <Reports />,
+				element: <ReportPanel />,
+				children:[
+					{
+						path:'investors',
+						element:<InvestorReports/>
+					},
+					{
+						path:'property',
+						element:<PropertyReports/>
+					},
+				]
 			},
 			{
 				path: 'notifications',
