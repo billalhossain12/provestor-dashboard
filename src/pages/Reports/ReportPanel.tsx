@@ -14,7 +14,7 @@ export default function ReportPanel() {
   return (
     <main>
       <div className="flex items-center gap-[3rem] text-[1.25rem] border-b-[1px] border-b-gray-300 mb-[2rem] px-5">
-        <NavLink className="pb-3" style={setActiveStyles} to="investors">Investors</NavLink>
+        <NavLink className="pb-3" style={setActiveStyles} to="" end>Investors</NavLink>
         <NavLink className="pb-3" style={setActiveStyles} to="property">Property</NavLink>
       </div>
       <Outlet/>

@@ -110,7 +110,7 @@ export const router = createBrowserRouter([
 				element: <ReportPanel />,
 				children:[
 					{
-						path:'investors',
+						index:true,
 						element:<InvestorReports/>
 					},
 					{
