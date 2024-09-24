@@ -32,6 +32,10 @@ aside:hover::-webkit-scrollbar-thumb {
 	background-color: #888;
 }
 
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+  }
+
 /* styles for react-slider */
 .horizontal-slider {
 	width: 100%;
