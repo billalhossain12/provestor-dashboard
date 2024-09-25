@@ -1,7 +1,17 @@
+import { Link } from 'react-router-dom';
+
 export default function Investors() {
-  return (
-    <div className="overflow-x-auto max-w-[80vw]">
-      <div className="bg-green-500 p-5 h-[300px] min-w-[600px]">I am child Element</div>
-    </div>
-  )
+	return (
+		<main>
+			<div className="flex items-center justify-between mb-[2rem]">
+				<h3 className="text-[1.25rem] font-medium">Investors</h3>
+				<Link to="blocked-investors">
+					<button className="flex items-center justify-center gap-3 bg-primary px-8 py-2 text-white">
+						Blocked Investors
+					</button>
+				</Link>
+			</div>
+      
+		</main>
+	);
 }
