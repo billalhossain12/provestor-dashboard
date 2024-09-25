@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import InvestorCards from './investorCards';
+import InvestorList from './InvestorList';
 
 export default function Investors() {
 	return (
@@ -12,7 +13,8 @@ export default function Investors() {
 					</button>
 				</Link>
 			</div>
-      <InvestorCards/>
+			<InvestorCards />
+			<InvestorList />
 		</main>
 	);
 }
