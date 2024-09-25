@@ -3,6 +3,7 @@ import ProgressAndLineChart from './ProgressAndLineChart';
 import PropertyReportBarchart from './PropertyReportBarchart';
 import PropertyReportCards from './PropertyReportCards';
 import PropertyReportPieChart from './PropertyReportPieChart';
+import PropertyInvestmentList from './PropertyInvestmentList';
 
 export default function PropertyReports() {
 	return (
@@ -22,6 +23,7 @@ export default function PropertyReports() {
 				<PropertyReportPieChart />
 			</div>
 			<ProgressAndLineChart />
+			<PropertyInvestmentList/>
 		</main>
 	);
 }
