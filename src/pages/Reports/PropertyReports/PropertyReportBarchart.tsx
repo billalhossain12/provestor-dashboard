@@ -50,7 +50,7 @@ export default function PropertyReportBarchart() {
 	return (
 		<div className="p-4 md:flex-1">
 			<header className="flex justify-between items-center pb-10">
-				<h3 className="text-[24px] font-medium">Investors</h3>
+				<h3 className="text-[24px] font-medium">Properties</h3>
 				<p>Last Month</p>
 			</header>
 

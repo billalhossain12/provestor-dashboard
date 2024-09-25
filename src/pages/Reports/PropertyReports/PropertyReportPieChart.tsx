@@ -100,7 +100,7 @@ export default function PropertyReportPieChart() {
 	];
 	return (
 		<div className="p-4  lg:w-[250px] w-full h-[500px]">
-			<h3 className="text-[24px] font-medium">Investors</h3>
+			<h3 className="text-[24px] font-medium">Properties</h3>
 			<ResponsiveContainer className="mt-[-60px]" width="100%" height="100%">
 				<PieChart>
 					<Pie
