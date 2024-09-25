@@ -48,7 +48,7 @@ const renderTooltip = ({
 
 export default function InvestorReportBarchart() {
 	return (
-		<div className="p-4 rounded-lg border-gray-300 border md:flex-1">
+		<div className="p-4 md:flex-1">
 			<header className="flex justify-between items-center pb-10">
 				<h3 className="text-[24px] font-medium">Investors</h3>
 				<p>Last Month</p>
@@ -56,7 +56,7 @@ export default function InvestorReportBarchart() {
 
 			{/* chart  */}
 			<div className="overflow-x-auto xl:max-w-[100vh] lg:max-w-[40vw] max-w-[80vw]">
-				<div className="min-w-[500px] h-[300px]">
+				<div className="min-w-[500px] h-[400px]">
 					<ResponsiveContainer className="pb-20" width="100%" height="100%">
 						<BarChart
 							margin={{
