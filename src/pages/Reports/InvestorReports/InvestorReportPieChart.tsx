@@ -75,15 +75,15 @@ const renderCustomizedLabel = ({
 			x={x}
 			y={y}
 			fill="white"
-			textAnchor={(x as number) > (cx as number) ? 'start' : 'end'}
-			dominantBaseline="left"
-			className="text-[8px]"
+			textAnchor='middle'
+			dominantBaseline="middle"
+			className='text-[12px]'
 		>
 			<>
-				<tspan x={x} dx="1.5em">
+				<tspan>
 					{name}
 				</tspan>
-				<tspan x={x} dy="1.5em" className="text-[12px]">
+				<tspan x={x} dy="1.5em" className="text-[14px]">
 					{`${((percent as number) * 100).toFixed(0)}%`}
 				</tspan>
 			</>
@@ -95,8 +95,8 @@ const COLORS = ['#22C55E', '#EF4444'];
 
 export default function InvestorReportPieChart() {
 	const chartData = [
-		{ name: 'Active Investors', value: 70 },
-		{ name: 'Inactive Investors', value: 30 },
+		{ name: 'Active', value: 70 },
+		{ name: 'Inactive', value: 30 },
 	];
 	return (
 		<div className="p-4 rounded-lg border-gray-300 border-[1px] w-[350px] h-[500px]">
