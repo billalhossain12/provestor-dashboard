@@ -26,7 +26,6 @@ const data = [
 ];
 
 const renderTooltip = ({ active, label, payload }:TooltipProps<string, number>) => {
-	console.log('Payload of the chart=====> ', active, label, payload);
 	if (active && payload?.length) {
 		return (
 			<div className="bg-[#000019] rounded-lg px-2 py-1 font-bold text-[10px] w-[68px] h-[35px] text-white">
