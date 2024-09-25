@@ -7,7 +7,7 @@ import {
 	Tooltip,
 	XAxis,
 	YAxis,
-  TooltipProps
+	TooltipProps,
 } from 'recharts';
 
 const data = [
@@ -25,7 +25,11 @@ const data = [
 	{ month: 'Dec', usersJoined: 120 },
 ];
 
-const renderTooltip = ({ active, label, payload }:TooltipProps<string, number>) => {
+const renderTooltip = ({
+	active,
+	label,
+	payload,
+}: TooltipProps<string, number>) => {
 	if (active && payload?.length) {
 		return (
 			<div className="bg-[#000019] rounded-lg px-2 py-1 font-bold text-[10px] w-[68px] h-[35px] text-white">
@@ -51,27 +55,40 @@ export default function InvestorReportBarchart() {
 			</header>
 
 			{/* chart  */}
-			<div className='overflow-x-auto max-w-[80vw]'>
-			<div className='min-w-[500px] h-[300px]'>
-			<ResponsiveContainer className="pb-20" width="100%" height="100%">
-				<BarChart data={data}>
-					<XAxis
-						dataKey="month"
-						tick={{ fontSize: 11, color: 'black', fontWeight: '600' }}
-						interval={0}
-					/>
-					<YAxis tick={{ fontSize: 14, color: 'black', fontWeight: '600' }} />
-					<Bar
-						dataKey="usersJoined"
-						fill="#D3F2D1"
-						barSize={8}
-						radius={5}
-						activeBar={<Rectangle fill="#25BF17" />}
-					/>
-					<Tooltip cursor={{ fill: 'transparent' }} content={renderTooltip} />
-				</BarChart>
-			</ResponsiveContainer>
-			</div>
+			<div className="overflow-x-auto xl:max-w-[100vh] lg:max-w-[40vw] max-w-[80vw]">
+				<div className="min-w-[500px] h-[300px]">
+					<ResponsiveContainer className="pb-20" width="100%" height="100%">
+						<BarChart
+							margin={{
+								top: 0,
+								right: 0,
+								left: 0,
+								bottom: 0,
+							}}
+							data={data}
+						>
+							<XAxis
+								dataKey="month"
+								tick={{ fontSize: 11, color: 'black', fontWeight: '600' }}
+								interval={0}
+							/>
+							<YAxis
+								tick={{ fontSize: 14, color: 'black', fontWeight: '600' }}
+							/>
+							<Bar
+								dataKey="usersJoined"
+								fill="#D3F2D1"
+								barSize={8}
+								radius={5}
+								activeBar={<Rectangle fill="#25BF17" />}
+							/>
+							<Tooltip
+								cursor={{ fill: 'transparent' }}
+								content={renderTooltip}
+							/>
+						</BarChart>
+					</ResponsiveContainer>
+				</div>
 			</div>
 		</div>
 	);
