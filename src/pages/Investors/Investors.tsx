@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import InvestorCards from './investorCards';
 
 export default function Investors() {
 	return (
@@ -11,7 +12,7 @@ export default function Investors() {
 					</button>
 				</Link>
 			</div>
-      
+      <InvestorCards/>
 		</main>
 	);
 }
