@@ -44,15 +44,17 @@ const renderTooltip = ({ active, label, payload }:TooltipProps<string, number>) 
 
 export default function InvestorReportBarchart() {
 	return (
-		<div className="p-4 rounded-lg border-gray-300 border w-full flex-1 h-[500px]">
+		<div className="p-4 rounded-lg border-gray-300 border md:flex-1">
 			<header className="flex justify-between items-center pb-10">
 				<h3 className="text-[24px] font-medium">Investors</h3>
 				<p>Last Month</p>
 			</header>
 
 			{/* chart  */}
+			<div className='overflow-x-auto max-w-[80vw]'>
+			<div className='min-w-[500px] h-[300px]'>
 			<ResponsiveContainer className="pb-20" width="100%" height="100%">
-				<BarChart width={500} height={300} data={data}>
+				<BarChart data={data}>
 					<XAxis
 						dataKey="month"
 						tick={{ fontSize: 11, color: 'black', fontWeight: '600' }}
@@ -69,6 +71,8 @@ export default function InvestorReportBarchart() {
 					<Tooltip cursor={{ fill: 'transparent' }} content={renderTooltip} />
 				</BarChart>
 			</ResponsiveContainer>
+			</div>
+			</div>
 		</div>
 	);
 }

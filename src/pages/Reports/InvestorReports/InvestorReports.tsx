@@ -10,7 +10,7 @@ export default function InvestorReports() {
 				Investors Reports
 			</h3>
 			<InvestorReportCards />
-			<div className='flex items-center gap-10 mb-[2.5rem] bg-white'>
+			<div className='flex lg:flex-row flex-col items-center gap-10 mb-[2.5rem] bg-white'>
 			<InvestorReportBarchart />
 			<InvestorReportPieChart/>
 			</div>

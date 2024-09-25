@@ -99,10 +99,10 @@ export default function InvestorReportPieChart() {
 		{ name: 'Inactive', value: 30 },
 	];
 	return (
-		<div className="p-4 rounded-lg border-gray-300 border-[1px] w-[350px] h-[500px]">
+		<div className="p-4 rounded-lg border-gray-300 border-[1px] lg:w-[250px] w-full h-[400px]">
 			<h3 className="text-[24px] font-medium">Investors</h3>
 			<ResponsiveContainer className="mt-[-60px]" width="100%" height="100%">
-				<PieChart width={200} height={200}>
+				<PieChart>
 					<Pie
 						data={chartData}
 						cx="50%"
