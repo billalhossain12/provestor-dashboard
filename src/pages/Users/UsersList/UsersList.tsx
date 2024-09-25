@@ -11,7 +11,7 @@ type TUserDetails = {
 };
 
 type TDataRow = {
-	userId: number;
+	userId: string;
 	userDetails: TUserDetails;
 	onboardingDate: string;
 	status: string;
