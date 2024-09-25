@@ -2,11 +2,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { Progress } from '@material-tailwind/react';
 import type { ProgressProps } from '@material-tailwind/react';
 
-// Pick only the relevant props: color, value, and size
-type PickedProgressProps = Pick<
-	ProgressProps,
-	'color' | 'value' | 'size' | 'label'
->;
+
 
 import {
 	AreaChart,
@@ -18,6 +14,11 @@ import {
 	ResponsiveContainer,
 } from 'recharts';
 
+// Pick only the relevant props: color, value, and size
+type PickedProgressProps = Pick<
+	ProgressProps,
+	'color' | 'value' | 'size' | 'label'
+>;
 const ProgressBar = ({
 	value = 50,
 	color = 'green',
@@ -120,7 +121,7 @@ export default function DashboardOverView() {
 			<section className="mb-[2.5rem]">
 				<div className="grid xl:grid-cols-2 grid-cols-1 gap-[1.5rem]">
 					{/* Property List with Progress  */}
-					<div className="shadow-custom">
+					<div className="shadow-custom bg-white">
 						<h3 className="text-[1.25rem] font-semibold p-[1.5rem]">
 							Properties
 						</h3>
@@ -237,7 +238,7 @@ export default function DashboardOverView() {
 					</div>
 
 					{/* Area Chart  */}
-					<div className="shadow-custom p-[1.5rem]">
+					<div className="shadow-custom p-[1.5rem] bg-white">
 						<div className="flex justify-between items-center flex-wrap">
 							<h3 className="text-[1.25rem] font-semibold pb-[1.2rem]">
 								Total Shares
