@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Outlet, useNavigate } from 'react-router-dom';
+import InvestorViewCards from './InvestorViewCards';
 
 export default function InvestorViewPanel() {
 	const navigate = useNavigate();
@@ -23,6 +24,7 @@ export default function InvestorViewPanel() {
                 <button className='md:px-8 px-5 py-2 bg-red-500 text-white'>Block Investor</button>
             </div>
             </div>
+            <InvestorViewCards/>
             <Outlet/>
 		</main>
 	);
