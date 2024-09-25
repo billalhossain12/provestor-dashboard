@@ -27,7 +27,7 @@ export default function PropertyView() {
 			{/* Section 1  */}
 			<section className="grid lg:grid-cols-2 grid-cols-1 gap-[1.5rem] mb-[2.5rem]">
 				{/* item - 1  */}
-				<div className="shadow-custom p-[1rem]">
+				<div className="shadow-custom p-[1rem] bg-white">
 					<div className="flex items-center justify-between">
 						<div>
 							<h3 className="text-[1.25rem] font-semibold">
@@ -55,7 +55,7 @@ export default function PropertyView() {
 				</div>
 
 				{/* item - 2  */}
-				<div className="shadow-custom p-[1rem]">
+				<div className="shadow-custom p-[1rem] bg-white">
 					<div className="flex items-center gap-5 mt-[1rem]">
 						<div className="space-y-[0.3rem]">
 							<h5 className="text-[14px] text-[#8B8D97]">Ownership</h5>
@@ -80,7 +80,7 @@ export default function PropertyView() {
 				</div>
 
 				{/* item - 3  */}
-				<div className="shadow-custom p-[1rem]">
+				<div className="shadow-custom p-[1rem] bg-white">
 					<div className="flex items-center gap-5 mt-[1rem]">
 						<div className="space-y-[0.3rem]">
 							<h5 className="text-[14px] text-[#8B8D97]">Price</h5>
