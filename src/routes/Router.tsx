@@ -32,6 +32,7 @@ import PropertyFormPanel from '../pages/Property/PropertyFormPanel';
 import ReportPanel from '../pages/Reports/ReportPanel';
 import InvestorReports from '../pages/Reports/InvestorReports/InvestorReports';
 import PropertyReports from '../pages/Reports/PropertyReports/PropertyReports';
+import InvestorViewPanel from '../pages/Investors/InvestorViewPanel';
 
 export const router = createBrowserRouter([
 	{
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'investors',
 				element: <Investors />,
+			},
+			{
+				path: 'investors/:investorId',
+				element: <InvestorViewPanel />,
 			},
 			{
 				path: 'users',
