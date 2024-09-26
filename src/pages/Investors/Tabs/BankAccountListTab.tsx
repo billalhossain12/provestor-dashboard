@@ -133,8 +133,8 @@ const data = [
 const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'SL',
-		selector: (row, index) => (index as number) + 1,
-		maxWidth: '0.3rem',
+		selector: (row, index) => index as number + 1,
+		maxWidth: '0.5rem',
 	},
 	{
 		name: 'Bank Details',
@@ -155,7 +155,7 @@ const columns: TableColumn<TDataRow>[] = [
 				</div>
 			</div>
 		),
-		grow: 2,
+		grow: 3,
 	},
 	{
 		name: 'A/C Type',
@@ -173,7 +173,7 @@ const columns: TableColumn<TDataRow>[] = [
 		name: 'Bank Account Nick Name',
 		id: 'bankAccountNickName',
 		selector: row => row.bankAccountNickName,
-		grow: 2,
+		grow: 3,
 		sortable: true,
 	},
 	{
