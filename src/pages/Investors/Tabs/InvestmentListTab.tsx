@@ -243,26 +243,26 @@ const columns: TableColumn<TDataRow>[] = [
 		id: 'orderId',
 		selector: row => row.orderId,
 		center: true,
-		grow: 2,
+		grow: 1,
 	},
 	{
 		name: 'Image',
 		id: 'image',
 		cell: row => <img src={row.image} alt="Property Image" />,
 		center: true,
-		grow: 2,
+		grow: 1,
 	},
 	{
 		name: 'Property Details',
 		id: 'investorDetails',
 		cell: row => (
 			<div className="space-y-[0.3rem]">
-				<p>{row.propertyDetails.ownerName}</p>
-				<p>{row.propertyDetails.purchasePrice}</p>
-				<p>{row.propertyDetails.totalPrice}</p>
+				<p><span className='font-semibold'>Owner Name:</span>{row.propertyDetails.ownerName}</p>
+				<p><span className='font-semibold'>Purchase Price:</span>{row.propertyDetails.purchasePrice}</p>
+				<p><span className='font-semibold'>Total Price:</span>{row.propertyDetails.totalPrice}</p>
 			</div>
 		),
-		grow: 2,
+		grow: 3,
 	},
 	{
 		name: 'Invested Date',
