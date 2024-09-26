@@ -4,24 +4,17 @@ import DataTable, {
 	TableStyles,
 } from 'react-data-table-component';
 
-type TPropertyDetails = {
-	ownerName: string;
-	purchasePrice: number;
-	totalPrice: number;
-};
-
-type TInvested = {
-	sharesAmount: number;
-	investedAmount: number;
+type TBeneficiaryDetails = {
+	fullName: string;
+	DOB: string;
 };
 
 type TDataRow = {
-	orderId: string;
-	image: string;
-	propertyDetails: TPropertyDetails;
-	investedDate: string;
-	invested: TInvested;
-  status:string;
+	beneficiaryDetails: TBeneficiaryDetails;
+	properytName: string;
+	addedDate: string;
+	relationWithInvestor: string;
+	document: string;
 };
 
 const customStyles: TableStyles = {
@@ -79,156 +72,56 @@ const customStyles: TableStyles = {
 };
 
 const data = [
-  {
-    orderId: 'ord001',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'John Doe',
-      purchasePrice: 350000,
-      totalPrice: 400000,
-    },
-    investedDate: '2023-08-12',
-    invested: {
-      sharesAmount: 25,
-      investedAmount: 50000,
-    },
-    status: 'active',
-  },
-  {
-    orderId: 'ord002',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Jane Smith',
-      purchasePrice: 500000,
-      totalPrice: 550000,
-    },
-    investedDate: '2023-09-15',
-    invested: {
-      sharesAmount: 50,
-      investedAmount: 100000,
-    },
-    status: 'pending',
-  },
-  {
-    orderId: 'ord003',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Michael Johnson',
-      purchasePrice: 250000,
-      totalPrice: 300000,
-    },
-    investedDate: '2023-07-20',
-    invested: {
-      sharesAmount: 20,
-      investedAmount: 40000,
-    },
-    status: 'completed',
-  },
-  {
-    orderId: 'ord004',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Emily Davis',
-      purchasePrice: 700000,
-      totalPrice: 750000,
-    },
-    investedDate: '2023-06-25',
-    invested: {
-      sharesAmount: 70,
-      investedAmount: 140000,
-    },
-    status: 'active',
-  },
-  {
-    orderId: 'ord005',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Chris Lee',
-      purchasePrice: 150000,
-      totalPrice: 200000,
-    },
-    investedDate: '2023-05-10',
-    invested: {
-      sharesAmount: 10,
-      investedAmount: 20000,
-    },
-    status: 'pending',
-  },
-  {
-    orderId: 'ord006',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Sarah Wilson',
-      purchasePrice: 450000,
-      totalPrice: 500000,
-    },
-    investedDate: '2023-04-05',
-    invested: {
-      sharesAmount: 45,
-      investedAmount: 90000,
-    },
-    status: 'active',
-  },
-  {
-    orderId: 'ord007',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'David Martinez',
-      purchasePrice: 300000,
-      totalPrice: 350000,
-    },
-    investedDate: '2023-03-18',
-    invested: {
-      sharesAmount: 30,
-      investedAmount: 60000,
-    },
-    status: 'completed',
-  },
-  {
-    orderId: 'ord008',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Linda Clark',
-      purchasePrice: 600000,
-      totalPrice: 650000,
-    },
-    investedDate: '2023-02-25',
-    invested: {
-      sharesAmount: 60,
-      investedAmount: 120000,
-    },
-    status: 'pending',
-  },
-  {
-    orderId: 'ord009',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'James Lewis',
-      purchasePrice: 400000,
-      totalPrice: 450000,
-    },
-    investedDate: '2023-01-30',
-    invested: {
-      sharesAmount: 40,
-      investedAmount: 80000,
-    },
-    status: 'active',
-  },
-  {
-    orderId: 'ord010',
-    image: 'https://i.ibb.co.com/L1njZks/property-image.jpg',
-    propertyDetails: {
-      ownerName: 'Olivia Brown',
-      purchasePrice: 350000,
-      totalPrice: 400000,
-    },
-    investedDate: '2023-08-22',
-    invested: {
-      sharesAmount: 35,
-      investedAmount: 70000,
-    },
-    status: 'completed',
-  },
+	{
+		beneficiaryDetails: {
+			fullName: 'Siam Ahmed',
+			DOB: '30-03-1997',
+		},
+		properytName: 'Sunset Villas',
+		addedDate: '2023-01-12',
+		relationWithInvestor: 'Brother',
+		document: 'https://example.com/docs/property1.pdf',
+	},
+	{
+		beneficiaryDetails: {
+			fullName: 'Siam Ahmed',
+			DOB: '30-03-1997',
+		},
+		properytName: 'Oceanview Apartments',
+		addedDate: '2023-02-18',
+		relationWithInvestor: 'Cousin',
+		document: 'https://example.com/docs/property2.pdf',
+	},
+	{
+		beneficiaryDetails: {
+			fullName: 'Siam Ahmed',
+			DOB: '30-03-1997',
+		},
+		properytName: 'Mountain Peak Lodge',
+		addedDate: '2023-03-25',
+		relationWithInvestor: 'Friend',
+		document: 'https://example.com/docs/property3.pdf',
+	},
+	{
+		beneficiaryDetails: {
+			fullName: 'Siam Ahmed',
+			DOB: '30-03-1997',
+		},
+		properytName: 'Green Valley Estate',
+		addedDate: '2023-04-10',
+		relationWithInvestor: 'Nephew',
+		document: 'https://example.com/docs/property4.pdf',
+	},
+	{
+		beneficiaryDetails: {
+			fullName: 'Siam Ahmed',
+			DOB: '30-03-1997',
+		},
+		properytName: 'Lakeview Homes',
+		addedDate: '2023-05-15',
+		relationWithInvestor: 'Son',
+		document: 'https://example.com/docs/property5.pdf',
+	},
 ];
 
 const columns: TableColumn<TDataRow>[] = [
@@ -240,69 +133,63 @@ const columns: TableColumn<TDataRow>[] = [
 	},
 	{
 		name: 'Beneficiary Details',
-		id: 'orderId',
-		selector: row => row.orderId,
+		id: 'beneficiaryDetails',
+		cell: row => (
+			<div>
+				<div>
+					<span className="font-semibold mr-1">Full Name:</span>
+					<span>{row.beneficiaryDetails.fullName}</span>
+				</div>
+				<div className="mt-2">
+					<span className="font-semibold mr-1">DOB:</span>
+					<span>{row.beneficiaryDetails.DOB}</span>
+				</div>
+			</div>
+		),
 		center: true,
 		grow: 2,
 	},
 	{
 		name: 'Property Name',
-		id: 'investorDetails',
-		cell: row => (
-			<div className="space-y-[0.3rem]">
-				<p>{row.propertyDetails.ownerName}</p>
-				<p>{row.propertyDetails.purchasePrice}</p>
-				<p>{row.propertyDetails.totalPrice}</p>
-			</div>
-		),
+		id: 'propertyName',
+		selector: row => row.properytName,
 		grow: 2,
 	},
 	{
 		name: 'Date Added',
-		id: 'investedDate',
-		selector: row => row.investedDate,
+		id: 'addedDate',
+		cell: row => <p>{row.addedDate}</p>,
 		grow: 1,
 	},
 	{
 		name: 'Relation with Investor',
-		id: 'invested',
-		cell: row => (
-			<div className="space-y-[0.3rem]">
-				<div>
-					<span>Shares:-</span>
-					<span className="ml-1">{row.invested.sharesAmount}</span>
-				</div>
-				<div>
-					<span>Invested:-</span>
-					<span className="ml-1">${row.invested.investedAmount}</span>
-				</div>
-			</div>
-		),
+		id: 'relationWithInvestor',
+		selector: row => row.relationWithInvestor,
 		grow: 2,
 		sortable: true,
 	},
 	{
 		name: 'Document',
-		id: 'status',
-		selector: row => row.status,
-		grow: 1,
+		id: 'document',
+		cell: row => <p className="w-[130px] px-1">{row.document}</p>,
+		grow: 2,
 		sortable: true,
 	},
 	{
 		name: 'Action',
 		id: 'action',
 		cell: () => (
-			<div className='flex items-center gap-3'>
-        <div className="flex space-x-2 border-[1px] border-primary text-primary bg-[#25BF171A] p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="material-symbols:check" />
+			<div className="flex items-center gap-3">
+				<div className="flex space-x-2 border-[1px] border-primary text-primary bg-[#25BF171A] p-2 rounded-md cursor-pointer">
+					<Icon className="text-[1.5rem]" icon="material-symbols:check" />
+				</div>
+				<div className="flex space-x-2 border-[1px] border-red-800 text-red-800 p-2 rounded-md cursor-pointer">
+					<Icon className="text-[1.5rem]" icon="gridicons:cross" />
+				</div>
+				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
+					<Icon className="text-[1.5rem]" icon="ic:sharp-cloud-download" />
+				</div>
 			</div>
-			<div className="flex space-x-2 border-[1px] border-red-800 text-red-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="gridicons:cross" />
-			</div>
-			<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-				<Icon className="text-[1.5rem]" icon="ic:sharp-cloud-download" />
-			</div>
-      </div>
 		),
 		center: true,
 		grow: 1,
