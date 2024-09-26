@@ -134,7 +134,6 @@ const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'SL',
 		selector: (row, index) => (index as number) + 1,
-		center: true,
 		maxWidth: '0.3rem',
 	},
 	{
@@ -156,7 +155,6 @@ const columns: TableColumn<TDataRow>[] = [
 				</div>
 			</div>
 		),
-		center: true,
 		grow: 2,
 	},
 	{
@@ -169,7 +167,7 @@ const columns: TableColumn<TDataRow>[] = [
 		name: 'Bank Name',
 		id: 'bankName',
 		cell: row => <p>{row.bankName}</p>,
-		grow: 1,
+		grow: 2,
 	},
 	{
 		name: 'Bank Account Nick Name',
@@ -184,26 +182,7 @@ const columns: TableColumn<TDataRow>[] = [
 		cell: row => <p className="w-[130px] px-1">{row.addedDate}</p>,
 		grow: 2,
 		sortable: true,
-	},
-	{
-		name: 'Action',
-		id: 'action',
-		cell: () => (
-			<div className="flex items-center gap-3">
-				<div className="flex space-x-2 border-[1px] border-primary text-primary bg-[#25BF171A] p-2 rounded-md cursor-pointer">
-					<Icon className="text-[1.5rem]" icon="material-symbols:check" />
-				</div>
-				<div className="flex space-x-2 border-[1px] border-red-800 text-red-800 p-2 rounded-md cursor-pointer">
-					<Icon className="text-[1.5rem]" icon="gridicons:cross" />
-				</div>
-				<div className="flex space-x-2 border-[1px] border-gray-800 p-2 rounded-md cursor-pointer">
-					<Icon className="text-[1.5rem]" icon="ic:sharp-cloud-download" />
-				</div>
-			</div>
-		),
-		center: true,
-		grow: 1,
-	},
+	}
 ];
 
 export default function BankAccountListTab() {

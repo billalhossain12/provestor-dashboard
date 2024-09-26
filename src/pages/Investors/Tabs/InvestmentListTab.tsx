@@ -235,21 +235,18 @@ const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'SL',
 		selector: (row, index) => (index as number) + 1,
-		center: true,
 		maxWidth: '0.3rem',
 	},
 	{
 		name: 'Order ID',
 		id: 'orderId',
 		selector: row => row.orderId,
-		center: true,
 		grow: 1,
 	},
 	{
 		name: 'Image',
 		id: 'image',
 		cell: row => <img src={row.image} alt="Property Image" />,
-		center: true,
 		grow: 1,
 	},
 	{

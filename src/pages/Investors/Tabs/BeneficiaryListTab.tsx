@@ -128,7 +128,6 @@ const columns: TableColumn<TDataRow>[] = [
 	{
 		name: 'SL',
 		selector: (row, index) => (index as number) + 1,
-		center: true,
 		maxWidth: '0.3rem',
 	},
 	{
@@ -146,7 +145,6 @@ const columns: TableColumn<TDataRow>[] = [
 				</div>
 			</div>
 		),
-		center: true,
 		grow: 2,
 	},
 	{
