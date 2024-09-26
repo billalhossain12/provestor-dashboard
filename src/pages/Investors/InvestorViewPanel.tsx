@@ -1,11 +1,12 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Outlet, useNavigate } from 'react-router-dom';
 import InvestorViewCards from './InvestorViewCards';
+import Tabs from './Tabs/Tabs';
 
 export default function InvestorViewPanel() {
 	const navigate = useNavigate();
 	return (
-		<main>
+		<main className='mb-[2.5rem]'>
 			<div className='flex md:flex-row flex-col md:justify-between md:items-center md:gap-0 gap-3 mb-[3rem]'>
             <div className="flex items-center md:gap-[2rem] gap-[1rem]">
 				<div
@@ -25,6 +26,7 @@ export default function InvestorViewPanel() {
             </div>
             </div>
             <InvestorViewCards/>
+			<Tabs/>
             <Outlet/>
 		</main>
 	);

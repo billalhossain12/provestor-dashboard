@@ -33,12 +33,16 @@ import ReportPanel from '../pages/Reports/ReportPanel';
 import InvestorReports from '../pages/Reports/InvestorReports/InvestorReports';
 import PropertyReports from '../pages/Reports/PropertyReports/PropertyReports';
 import InvestorViewPanel from '../pages/Investors/InvestorViewPanel';
+import InvestmentListTab from '../pages/Investors/Tabs/InvestmentListTab';
+import BeneficiaryListTab from '../pages/Investors/Tabs/BeneficiaryListTab';
+import BankAccountListTab from '../pages/Investors/Tabs/BankAccountListTab';
+import HistoryListTab from '../pages/Investors/Tabs/HistoryListTab';
 
 export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <MainLayout />,
-		errorElement:<NotFound/>,
+		errorElement: <NotFound />,
 		children: [
 			{
 				path: '',
@@ -55,56 +59,74 @@ export const router = createBrowserRouter([
 			{
 				path: 'investors/:investorId',
 				element: <InvestorViewPanel />,
+				children: [
+					{
+						index: true,
+						element: <InvestmentListTab />,
+					},
+					{
+						path: 'beneficiaries-list',
+						element: <BeneficiaryListTab />,
+					},
+					{
+						path: 'bank-account-list',
+						element: <BankAccountListTab />,
+					},
+					{
+						path: 'history-list',
+						element: <HistoryListTab />,
+					},
+				],
 			},
 			{
 				path: 'users',
 				element: <UsersPanel />,
-				children:[
+				children: [
 					{
-						path:'',
-						element:<Users/>
+						path: '',
+						element: <Users />,
 					},
 					{
-						path:'blocked-users',
-						element:<BlockedUsersList/>
+						path: 'blocked-users',
+						element: <BlockedUsersList />,
 					},
-				]
+				],
 			},
 			{
 				path: 'property',
 				element: <PropertyViewPanel />,
-				children:[
+				children: [
 					{
-						path:'',
-						element:<Property/>
+						path: '',
+						element: <Property />,
 					},
 					{
-						path:'view/:propertyId',
-						element:<PropertyView/>
+						path: 'view/:propertyId',
+						element: <PropertyView />,
 					},
-				]
+				],
 			},
 			{
 				path: 'property/add-porperty',
 				element: <PropertyFormPanel />,
-				children:[
+				children: [
 					{
-						path:'property-details',
-						element:<PropertyDetailsForm/>
+						path: 'property-details',
+						element: <PropertyDetailsForm />,
 					},
 					{
-						path:'financial-informations',
-						element:<FinancialInfoForm/>
+						path: 'financial-informations',
+						element: <FinancialInfoForm />,
 					},
 					{
-						path:'risk-and-financing-details',
-						element:<RiskAndFinancingForm/>
+						path: 'risk-and-financing-details',
+						element: <RiskAndFinancingForm />,
 					},
 					{
-						path:'documents',
-						element:<DocumentsForm/>
+						path: 'documents',
+						element: <DocumentsForm />,
 					},
-				]
+				],
 			},
 			{
 				path: 'contact',
@@ -113,48 +135,48 @@ export const router = createBrowserRouter([
 			{
 				path: 'reports',
 				element: <ReportPanel />,
-				children:[
+				children: [
 					{
-						index:true,
-						element:<InvestorReports/>
+						index: true,
+						element: <InvestorReports />,
 					},
 					{
-						path:'property',
-						element:<PropertyReports/>
+						path: 'property',
+						element: <PropertyReports />,
 					},
-				]
+				],
 			},
 			{
 				path: 'notifications',
 				element: <NotificationPanel />,
-				children:[
+				children: [
 					{
-						path:'',
-						element:<SendNotificationForm/>
+						path: '',
+						element: <SendNotificationForm />,
 					},
 					{
-						path:':notificationId',
-						element:<EditNotificationForm/>
+						path: ':notificationId',
+						element: <EditNotificationForm />,
 					},
-				]
+				],
 			},
 			{
 				path: 'careers',
 				element: <CareerPanel />,
-				children:[
+				children: [
 					{
-						path:"",
-						element:<Careers/>
+						path: '',
+						element: <Careers />,
 					},
 					{
-						path:"add-career",
-						element:<AddCareerForm/>
+						path: 'add-career',
+						element: <AddCareerForm />,
 					},
 					{
-						path:":careerId",
-						element:<CareerView/>
+						path: ':careerId',
+						element: <CareerView />,
 					},
-				]
+				],
 			},
 			{
 				path: 'values',
@@ -171,16 +193,16 @@ export const router = createBrowserRouter([
 			{
 				path: 'faq',
 				element: <FAQ />,
-				children:[
+				children: [
 					{
-						path:'',
-						element:<AddFaqForm/>
+						path: '',
+						element: <AddFaqForm />,
 					},
 					{
-						path:':54365654',
-						element:<EditFaqForm/>
+						path: ':54365654',
+						element: <EditFaqForm />,
 					},
-				]
+				],
 			},
 			{
 				path: 'archives',
