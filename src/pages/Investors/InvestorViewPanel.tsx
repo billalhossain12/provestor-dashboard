@@ -26,8 +26,10 @@ export default function InvestorViewPanel() {
             </div>
             </div>
             <InvestorViewCards/>
+			<div className='bg-white p-[1rem] shadow-custom'>
 			<Tabs/>
             <Outlet/>
+			</div>
 		</main>
 	);
 }
