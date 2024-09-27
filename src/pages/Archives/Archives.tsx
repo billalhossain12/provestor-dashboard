@@ -3,7 +3,7 @@ import PropertiesArchivedList from './PropertiesArchivedList/PropertiesArchivedL
 
 export default function Archives() {
 	return (
-		<main>
+		<main className='m-[2px]'>
 			<h3 className="text-[1.25rem] font-medium mb-[2rem]">Archive Data</h3>
 			<InvestorsArchivedList />
 			<PropertiesArchivedList />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Careers() {
 	return (
-		<section>
+		<section className='mx-[2px]'>
 			<div className='flex items-center justify-between mb-[2rem]'>
 				<h3 className="text-[1.25rem] font-medium">Career</h3>
 				<Link to="add-career">

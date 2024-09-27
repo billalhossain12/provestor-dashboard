@@ -268,8 +268,8 @@ const columns: TableColumn<TDataRow>[] = [
 
 export default function InvestorsArchivedList() {
 	return (
-		<section className="mb-[2.5rem]">
-			<header className="overflow-x-auto xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] pb-5 bg-white p-5">
+		<section className="mb-[2.5rem] bg-white shadow-custom">
+			<header className="overflow-x-auto pb-5 p-5">
 				<div className="flex justify-between items-center min-w-[1100px]">
 					<h3 className="text-[1.25rem] font-medium">Investors Archive data</h3>
 					<div className="flex items-center gap-[2.5rem] flex-wrap">
@@ -293,31 +293,25 @@ export default function InvestorsArchivedList() {
 					</div>
 				</div>
 			</header>
-
-			{/* Table  */}
-			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw]">
-				<DataTable
-					columns={columns.map(column => ({
-						...column,
-						name: (
-							<div className="flex items-center justify-between">
-								<span>{column.name}</span>
-								{column.name == 'Invested' && (
-									<Icon icon="solar:sort-outline" />
-								)}
-								{column.name == 'Payment Status' && (
-									<Icon icon="solar:sort-outline" />
-								)}
-							</div>
-						),
-					}))}
-					data={data}
-					customStyles={customStyles}
-					paginationPerPage={10}
-					pagination
-					progressPending={false}
-				/>
-			</div>
+			<DataTable
+				columns={columns.map(column => ({
+					...column,
+					name: (
+						<div className="flex items-center justify-between">
+							<span>{column.name}</span>
+							{column.name == 'Invested' && <Icon icon="solar:sort-outline" />}
+							{column.name == 'Payment Status' && (
+								<Icon icon="solar:sort-outline" />
+							)}
+						</div>
+					),
+				}))}
+				data={data}
+				customStyles={customStyles}
+				paginationPerPage={10}
+				pagination
+				progressPending={false}
+			/>
 		</section>
 	);
 }

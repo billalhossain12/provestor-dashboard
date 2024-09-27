@@ -55,7 +55,7 @@ const customStyles: TableStyles = {
 	table: {
 		style: {
 			overflow: 'visible',
-			minWidth: '1100px',
+			minWidth: '800px',
 		},
 	},
 	tableWrapper: {
@@ -225,7 +225,7 @@ const columns: TableColumn<TDataRow>[] = [
 export default function FaqList() {
 	return (
 		<section className="mb-[2.5rem]">
-			<header className="overflow-x-auto xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] pb-5 bg-white p-5">
+			<header className="overflow-x-auto p-5 mb-3">
 				<div className="flex justify-between items-center min-w-[1100px]">
 					<h3 className="text-[1.25rem] font-medium">List of FAQ</h3>
 					<div className="flex items-center gap-[2.5rem] flex-wrap">
@@ -262,8 +262,6 @@ export default function FaqList() {
 				</div>
 			</header>
 
-			{/* Table  */}
-			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] bg-white">
 				<DataTable
 					columns={columns.map(column => ({
 						...column,
@@ -285,7 +283,6 @@ export default function FaqList() {
 					pagination
 					progressPending={false}
 				/>
-			</div>
 		</section>
 	);
 }

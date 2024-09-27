@@ -24,7 +24,7 @@ export default function CareerView() {
 			</div>
 
 			<div className="grid md:grid-cols-3 grid-cols-1 gap-[1.5rem]">
-				<div className="space-y-[1rem] shadow-custom p-[1rem]">
+				<div className="space-y-[1rem] shadow-custom p-[1rem] bg-white">
 					<div className="flex justify-between items-center">
 						<div>
 							<h3 className="text-[1.25rem] font-semibold">Content Writer</h3>
@@ -54,7 +54,7 @@ export default function CareerView() {
 					</div>
 				</div>
 
-				<div className="md:col-span-2 shadow-custom p-[1rem]">
+				<div className="md:col-span-2 shadow-custom p-[1rem] bg-white">
 					<h5 className="text-[#8B8D97] text-[14px]">Job Description</h5>
 					<p>
 						Lorem ipsum dolor sit amet consectetur. Tellus lobortis lectus

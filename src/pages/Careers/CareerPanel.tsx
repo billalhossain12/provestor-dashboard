@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export default function CareerPanel() {
   return (
-    <main>
+    <main className="m-[2px]">
         <Outlet/>
     </main>
   )
