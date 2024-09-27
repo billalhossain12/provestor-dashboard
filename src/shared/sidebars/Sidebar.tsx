@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import { setActiveStyles } from '../../utils/setActiveStyles';
 export default function Sidebar() {
 	return (
-		<aside className="h-screen bg-white w-[17.44rem] fixed shadow-custom pt-[7.5rem] px-[1.5rem] overflow-y-auto pb-[5rem] leftSideBar md:block hidden">
+		<aside className="h-screen bg-white w-[17.44rem] fixed shadow-custom pt-[7.5rem] px-[1.5rem] overflow-y-auto pb-[5rem] leftSideBar lg:block hidden">
 			<ul className="space-y-[2rem]">
 				<li>
 					<NavLink
