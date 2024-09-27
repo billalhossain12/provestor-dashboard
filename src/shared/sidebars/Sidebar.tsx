@@ -123,10 +123,9 @@ export default function Sidebar() {
 				</li>
 				<li>
 					<NavLink
-						to="chat-support"
+						to="https://dashboard.tawk.to/#/chat" target="blank" rel="noopener noreferrer"
 						className="flex items-center gap-[1rem] p-[0.75rem] hover:text-primary duration-200"
 						style={setActiveStyles}
-						end
 					>
 						<Icon
 							className="text-[1.5rem]"

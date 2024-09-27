@@ -1,8 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
-import DataTable, {
-	TableColumn,
-	TableStyles,
-} from 'react-data-table-component';
+import DataTable, { TableColumn } from 'react-data-table-component';
+import { tableCustomStyles } from '../../../utils/tableCustomStyle';
 
 type TInvestorDetails = {
 	name: string;
@@ -17,60 +15,6 @@ type TDataRow = {
 	reason: string;
 	investedShare: number;
 	investedAmount: number;
-};
-
-const customStyles: TableStyles = {
-	headRow: {
-		style: {
-			fontWeight: 600,
-			padding: '10px 10px',
-			color: '#212529',
-			textAlign: 'left',
-		},
-	},
-	head: {
-		style: {
-			// borderRadius: "6px 6px 0px 0px",
-			borderTop: '0.824px solid #E9E9E9',
-			background: '#FFF',
-			fontSize: '15px',
-		},
-	},
-
-	rows: {
-		style: {
-			// borderRadius: "6px 6px 0px 0px",
-			// borderTop: "0.824px solid #E9E9E9",
-			background: '#FFF',
-			color: '#667085',
-			padding: '10px 10px',
-			fontSize: '14px',
-			fontWeight: 400,
-			width: 'auto',
-		},
-	},
-	pagination: {
-		style: {
-			boxShadow: '10px 5px 5px #ddd',
-			marginBottom: '5px',
-		},
-	},
-	table: {
-		style: {
-			overflow: 'visible',
-			minWidth: '1100px',
-		},
-	},
-	tableWrapper: {
-		style: {
-			overflow: 'visible',
-		},
-	},
-	responsiveWrapper: {
-		style: {
-			overflowX: 'auto', // table scroll on x axis
-		},
-	},
 };
 
 const data = [
@@ -266,33 +210,39 @@ const columns: TableColumn<TDataRow>[] = [
 	},
 ];
 
+const TableHeader = () => {
+	return (
+		<header className="overflow-x-auto pb-5 p-5">
+			<div className="flex justify-between items-center min-w-[1100px]">
+				<h3 className="text-[1.25rem] font-medium">Investors Archive data</h3>
+				<div className="flex items-center gap-[2.5rem] flex-wrap">
+					<div>
+						<div className="relative">
+							<input
+								className="outline-none border-[1px] border-[#D9D9D9] pl-[2.5rem] pr-[1rem] py-[0.5rem] md:w-auto w-full"
+								type="text"
+								placeholder="Search here..."
+							/>
+							<Icon
+								className="absolute left-2 top-[9px] text-primary text-[1.5rem]"
+								icon="mingcute:search-fill"
+							/>
+						</div>
+					</div>
+					<button className="bg-primary px-3 py-1 text-white flex items-center gap-2">
+						<span>Export</span>
+						<Icon icon="material-symbols:cloud-download" />
+					</button>
+				</div>
+			</div>
+		</header>
+	);
+};
+
 export default function InvestorsArchivedList() {
 	return (
 		<section className="mb-[2.5rem] bg-white shadow-custom">
-			<header className="overflow-x-auto pb-5 p-5">
-				<div className="flex justify-between items-center min-w-[1100px]">
-					<h3 className="text-[1.25rem] font-medium">Investors Archive data</h3>
-					<div className="flex items-center gap-[2.5rem] flex-wrap">
-						<div>
-							<div className="relative">
-								<input
-									className="outline-none border-[1px] border-[#D9D9D9] pl-[2.5rem] pr-[1rem] py-[0.5rem] md:w-auto w-full"
-									type="text"
-									placeholder="Search here..."
-								/>
-								<Icon
-									className="absolute left-2 top-[9px] text-primary text-[1.5rem]"
-									icon="mingcute:search-fill"
-								/>
-							</div>
-						</div>
-						<button className="bg-primary px-3 py-1 text-white flex items-center gap-2">
-							<span>Export</span>
-							<Icon icon="material-symbols:cloud-download" />
-						</button>
-					</div>
-				</div>
-			</header>
+			<TableHeader />
 			<DataTable
 				columns={columns.map(column => ({
 					...column,
@@ -307,7 +257,7 @@ export default function InvestorsArchivedList() {
 					),
 				}))}
 				data={data}
-				customStyles={customStyles}
+				customStyles={tableCustomStyles}
 				paginationPerPage={10}
 				pagination
 				progressPending={false}
