@@ -173,7 +173,7 @@ const columns: TableColumn<TDataRow>[] = [
 export default function InvestmentList() {
 	return (
 		<section className="mb-[2.5rem] shadow-custom">
-			<header className="overflow-x-auto xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] pb-5 bg-white p-5">
+			<header className="overflow-auto xl:max-w-[75vw] lg:max-w-[70vw] md:max-w-[95vw] sm:max-w-[93vw] max-w-[87vw] pb-5 bg-white p-5">
 				<div className="flex justify-between items-center min-w-[1100px]">
 					<h3 className="text-[1.25rem] font-medium">List of Investments</h3>
 					<div className="flex items-center gap-[2.5rem] flex-wrap">
@@ -210,7 +210,7 @@ export default function InvestmentList() {
 			</header>
 
 			{/* Table  */}
-			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw]">
+			<div className="overflow-auto xl:max-w-[75vw] lg:max-w-[70vw] md:max-w-[95vw] sm:max-w-[93vw] max-w-[87vw]">
 				<DataTable
 					columns={columns.map(column => ({
 						...column,

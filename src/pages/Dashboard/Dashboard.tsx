@@ -11,8 +11,8 @@ export default function Dashboard() {
       <DashboardOverView/>
       <PropertyOverViewCards/>
       <InvestmentList/>
-      <LatestInvestmentList/>
-      <TopInvestorAndLocationWrapper/>
+      {/* <LatestInvestmentList/> */}
+      {/* <TopInvestorAndLocationWrapper/> */}
     </main>
   )
 }

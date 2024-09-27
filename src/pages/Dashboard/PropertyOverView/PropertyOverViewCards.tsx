@@ -10,7 +10,7 @@ export default function PropertyOverViewCards() {
 					<Icon icon="iconoir:nav-arrow-down" />
 				</div>
 			</div>
-			<div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-[2rem]">
+			<div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[2rem]">
 				{/* item - 1  */}
 				<div className="shadow-custom p-[1.25rem] bg-white">
 					<h3 className="text-[#858585] font-semibold mb-3">Total Investors</h3>

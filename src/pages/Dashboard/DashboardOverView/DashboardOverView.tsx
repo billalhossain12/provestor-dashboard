@@ -2,8 +2,6 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { Progress } from '@material-tailwind/react';
 import type { ProgressProps } from '@material-tailwind/react';
 
-
-
 import {
 	AreaChart,
 	Area,
@@ -119,14 +117,14 @@ export default function DashboardOverView() {
 			</section>
 
 			<section className="mb-[2.5rem]">
-				<div className="grid xl:grid-cols-2 grid-cols-1 gap-[1.5rem]">
+				<div>
 					{/* Property List with Progress  */}
-					<div className="shadow-custom bg-white">
+					<div className="shadow-custom bg-white mb-[2.5rem] overflow-auto xl:max-w-[75vw] lg:max-w-[70vw] md:max-w-[95vw] sm:max-w-[93vw] max-w-[87vw]">
 						<h3 className="text-[1.25rem] font-semibold p-[1.5rem]">
 							Properties
 						</h3>
-						<div className="overflow-x-auto bg-white">
-							<table className="min-w-[500px] text-left">
+						<div className="bg-white min-w-[600px]">
+							<table className="text-left w-full">
 								<thead>
 									<tr className="text-[12px] font-bold border-y-[1px] border-y-[#EAECF0]">
 										<th className="px-[1.25rem] py-[12px]">SL</th>
@@ -149,7 +147,7 @@ export default function DashboardOverView() {
 											</p>
 											<ProgressBar />
 										</td>
-										<td className="p-[1.25rem] flex justify-center items-center">
+										<td className="p-[1.25rem] flex items-center">
 											<Icon
 												className="text-[2rem] cursor-pointer"
 												icon="weui:arrow-outlined"
@@ -168,7 +166,7 @@ export default function DashboardOverView() {
 											</p>
 											<ProgressBar />
 										</td>
-										<td className="p-[1.25rem] flex justify-center items-center">
+										<td className="p-[1.25rem] flex items-center">
 											<Icon
 												className="text-[2rem] cursor-pointer"
 												icon="weui:arrow-outlined"
@@ -187,7 +185,7 @@ export default function DashboardOverView() {
 											</p>
 											<ProgressBar />
 										</td>
-										<td className="p-[1.25rem] flex justify-center items-center">
+										<td className="p-[1.25rem] flex items-center">
 											<Icon
 												className="text-[2rem] cursor-pointer"
 												icon="weui:arrow-outlined"
@@ -206,7 +204,7 @@ export default function DashboardOverView() {
 											</p>
 											<ProgressBar />
 										</td>
-										<td className="p-[1.25rem] flex justify-center items-center">
+										<td className="p-[1.25rem] flex items-center">
 											<Icon
 												className="text-[2rem] cursor-pointer"
 												icon="weui:arrow-outlined"
@@ -225,7 +223,7 @@ export default function DashboardOverView() {
 											</p>
 											<ProgressBar />
 										</td>
-										<td className="p-[1.25rem] flex justify-center items-center">
+										<td className="p-[1.25rem] flex items-center">
 											<Icon
 												className="text-[2rem] cursor-pointer"
 												icon="weui:arrow-outlined"
@@ -238,7 +236,8 @@ export default function DashboardOverView() {
 					</div>
 
 					{/* Area Chart  */}
-					<div className="shadow-custom p-[1.5rem] bg-white">
+					<div className="shadow-custom p-[1.5rem] bg-white overflow-auto xl:max-w-[75vw] lg:max-w-[70vw] md:max-w-[95vw] sm:max-w-[93vw] max-w-[87vw]">
+						<div className='min-w-[600px]'>
 						<div className="flex justify-between items-center flex-wrap">
 							<h3 className="text-[1.25rem] font-semibold pb-[1.2rem]">
 								Total Shares
@@ -259,9 +258,8 @@ export default function DashboardOverView() {
 								</button>
 							</div>
 						</div>
-						<div className="overflow-auto">
-							<div className='min-w-[500px] h-[400px]'>
-							<ResponsiveContainer width="100%" height="100%">
+						<div className='h-[400px]'>
+						<ResponsiveContainer width="100%" height="100%">
 							<AreaChart
 								data={data}
 								margin={{
@@ -282,8 +280,8 @@ export default function DashboardOverView() {
 									fill="#24B24B2B"
 								/>
 							</AreaChart>
-							</ResponsiveContainer>
-							</div>
+						</ResponsiveContainer>
+						</div>
 						</div>
 					</div>
 				</div>
