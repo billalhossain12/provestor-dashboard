@@ -233,48 +233,52 @@ const columns: TableColumn<TDataRow>[] = [
 	},
 ];
 
+const TableHeader = () => {
+	return (
+		<header className="overflow-x-auto pb-5 bg-white p-5 xl:max-w-[75vw] lg:max-w-[67vw]">
+			<div className="flex justify-between items-center min-w-[1100px]">
+				<h3 className="text-[1.25rem] font-medium">List of Users</h3>
+				<div className="flex items-center gap-[2.5rem] flex-wrap">
+					<div>
+						<div className="relative">
+							<input
+								className="outline-none border-[1px] border-[#D9D9D9] pl-[2.5rem] pr-[1rem] py-[0.5rem] md:w-auto w-full"
+								type="text"
+								placeholder="Search here..."
+							/>
+							<Icon
+								className="absolute left-2 top-[9px] text-primary text-[1.5rem]"
+								icon="mingcute:search-fill"
+							/>
+						</div>
+					</div>
+					<div className="flex items-center gap-1">
+						<Icon className="text-[1.3rem]" icon="mdi:filter-outline" />
+						<p>Filter</p>
+					</div>
+					<div className="flex items-center gap-1">
+						<Icon className="text-[1.3rem]" icon="lets-icons:date-range" />
+						<p>Date</p>
+					</div>
+					<div className="flex items-center gap-1">
+						<p>Status</p>
+						<Icon className="text-[1.3rem]" icon="iconoir:nav-arrow-down" />
+					</div>
+					<button className="bg-primary px-3 py-1 text-white flex items-center gap-2">
+						<span>Export</span>
+						<Icon icon="material-symbols:cloud-download" />
+					</button>
+				</div>
+			</div>
+		</header>
+	);
+};
+
 export default function UsersList() {
 	return (
 		<section className="mb-[2.5rem] shadow-custom">
-			<header className="overflow-x-auto xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw] pb-5 bg-white p-5">
-				<div className="flex justify-between items-center min-w-[1100px]">
-					<h3 className="text-[1.25rem] font-medium">List of Users</h3>
-					<div className="flex items-center gap-[2.5rem] flex-wrap">
-						<div>
-							<div className="relative">
-								<input
-									className="outline-none border-[1px] border-[#D9D9D9] pl-[2.5rem] pr-[1rem] py-[0.5rem] md:w-auto w-full"
-									type="text"
-									placeholder="Search here..."
-								/>
-								<Icon
-									className="absolute left-2 top-[9px] text-primary text-[1.5rem]"
-									icon="mingcute:search-fill"
-								/>
-							</div>
-						</div>
-						<div className="flex items-center gap-1">
-							<Icon className="text-[1.3rem]" icon="mdi:filter-outline" />
-							<p>Filter</p>
-						</div>
-						<div className="flex items-center gap-1">
-							<Icon className="text-[1.3rem]" icon="lets-icons:date-range" />
-							<p>Date</p>
-						</div>
-						<div className="flex items-center gap-1">
-							<p>Status</p>
-							<Icon className="text-[1.3rem]" icon="iconoir:nav-arrow-down" />
-						</div>
-						<button className="bg-primary px-3 py-1 text-white flex items-center gap-2">
-							<span>Export</span>
-							<Icon icon="material-symbols:cloud-download" />
-						</button>
-					</div>
-				</div>
-			</header>
-
-			{/* Table  */}
-			<div className="xl:w-[1000px] lg:w-[750px] md:w-[500px] max-w-[90vw]">
+			<TableHeader/>
+			<div className='xl:max-w-[75vw] lg:max-w-[67vw]'>
 				<DataTable
 					columns={columns.map(column => ({
 						...column,

@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 
 export default function UserCards() {
 	return (
-		<section className="grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-[2rem] mb-[2.5rem]">
+		<section className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-[2rem] mb-[2.5rem]">
 			{/* item- 1  */}
 			<div className="shadow-custom p-[1.25rem] bg-white">
 				<h3 className="text-[#858585] font-semibold mb-3">Total Users</h3>
