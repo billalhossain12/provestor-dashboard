@@ -31,23 +31,25 @@ export default function Header() {
 				<div className="flex items-center">
 					<div className="bg-[#24b24a28] p-1 rounded-sm">
 						<Icon
-							onClick={()=>dispatch(toggleNotificationModal())}
+							onClick={() => dispatch(toggleNotificationModal())}
 							className="text-[2rem] text-primary cursor-pointer"
 							icon="carbon:notification-filled"
 						/>
 						{showNotificationModal && <NotificationModal />}
 					</div>
-					<div className="flex items-center ml-[2.5rem] gap-3 select-none cursor-pointer">
-						<img
-							className="w-[3.5rem] h-[3.5rem] rounded-md"
-							src={profilePhotoImg}
-							alt="Profile Photo"
-						/>
-						<div>
-							<h3 className="font-semibold">Billal Hossain</h3>
-							<h5 className="text-[0.875rem]">Admin</h5>
+					<Link to="/profile" className='ml-[2.5rem]'>
+						<div className="flex items-center gap-3 select-none">
+							<img
+								className="w-[3.5rem] h-[3.5rem] rounded-md"
+								src={profilePhotoImg}
+								alt="Profile Photo"
+							/>
+							<div>
+								<h3 className="font-semibold">Billal Hossain</h3>
+								<h5 className="text-[0.875rem]">Admin</h5>
+							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 		</header>

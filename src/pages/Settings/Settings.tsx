@@ -108,7 +108,6 @@ export default function Settings() {
 								offHandleColor="#fff"
 								onHandleColor="#fff"
 								activeBoxShadow="0 0 0 0"
-								value={false}
 								uncheckedIcon={false}
 								checkedIcon={false}
 							/>
@@ -146,7 +145,6 @@ export default function Settings() {
 								offHandleColor="#fff"
 								onHandleColor="#fff"
 								activeBoxShadow="0 0 0 0"
-								value={false}
 								uncheckedIcon={false}
 								checkedIcon={false}
 							/>
@@ -184,7 +182,6 @@ export default function Settings() {
 								offHandleColor="#fff"
 								onHandleColor="#fff"
 								activeBoxShadow="0 0 0 0"
-								value={false}
 								uncheckedIcon={false}
 								checkedIcon={false}
 							/>
@@ -222,7 +219,6 @@ export default function Settings() {
 								offHandleColor="#fff"
 								onHandleColor="#fff"
 								activeBoxShadow="0 0 0 0"
-								value={false}
 								uncheckedIcon={false}
 								checkedIcon={false}
 							/>
@@ -260,7 +256,6 @@ export default function Settings() {
 								offHandleColor="#fff"
 								onHandleColor="#fff"
 								activeBoxShadow="0 0 0 0"
-								value={false}
 								uncheckedIcon={false}
 								checkedIcon={false}
 							/>
@@ -270,7 +265,7 @@ export default function Settings() {
 
 				<div className="md:col-span-2 flex justify-end">
 					<button className="bg-primary px-[3rem] py-[0.5rem] text-white">
-						Submit
+						Save
 					</button>
 				</div>
 			</ProvestorForm>

@@ -37,6 +37,7 @@ import InvestmentListTab from '../pages/Investors/Tabs/InvestmentListTab';
 import BeneficiaryListTab from '../pages/Investors/Tabs/BeneficiaryListTab';
 import BankAccountListTab from '../pages/Investors/Tabs/BankAccountListTab';
 import HistoryListTab from '../pages/Investors/Tabs/HistoryListTab';
+import Profile from '../pages/Profile/Profile';
 
 export const router = createBrowserRouter([
 	{
@@ -207,6 +208,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'archives',
 				element: <Archives />,
+			},
+			{
+				path: 'profile',
+				element: <Profile />,
 			},
 		],
 	},
