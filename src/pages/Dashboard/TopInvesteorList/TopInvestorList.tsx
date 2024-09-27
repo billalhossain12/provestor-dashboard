@@ -125,8 +125,8 @@ const columns: TableColumn<TDataRow>[] = [
 
 export default function TopInvestorList() {
 	return (
-		<section className="mb-[1rem] shadow-custom">
-			<header className="pb-5 bg-white p-5">
+		<section className="mb-[1rem] shadow-custom bg-white">
+			<header className="pb-5 p-5">
 				<div className="flex justify-between items-center">
 					<h3 className="text-[1.25rem] font-medium">Top Investors</h3>
 					<div className="flex items-center gap-[2.5rem] flex-wrap">

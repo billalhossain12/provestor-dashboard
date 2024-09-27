@@ -7,12 +7,12 @@ import TopInvestorAndLocationWrapper from "./TopInvestorAndLocationWrapper/TopIn
 
 export default function Dashboard() {
   return (
-    <main>
+    <main className="mx-[2px]">
       <DashboardOverView/>
       <PropertyOverViewCards/>
       <InvestmentList/>
-      {/* <LatestInvestmentList/> */}
-      {/* <TopInvestorAndLocationWrapper/> */}
+      <LatestInvestmentList/>
+      <TopInvestorAndLocationWrapper/>
     </main>
   )
 }

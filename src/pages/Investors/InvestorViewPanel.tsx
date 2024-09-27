@@ -6,7 +6,7 @@ import Tabs from './Tabs/Tabs';
 export default function InvestorViewPanel() {
 	const navigate = useNavigate();
 	return (
-		<main className='mb-[2.5rem]'>
+		<main className='mb-[2.5rem] xl:max-w-[75vw] lg:max-w-[70vw] md:max-w-[95vw] sm:max-w-[93vw] max-w-[87vw]'>
 			<div className='flex md:flex-row flex-col md:justify-between md:items-center md:gap-0 gap-3 mb-[3rem]'>
             <div className="flex items-center md:gap-[2rem] gap-[1rem]">
 				<div
