@@ -5,7 +5,7 @@ import { FormStepper } from '../../components/FormStepper';
 export default function PropertyFormPanel() {
     const navigate = useNavigate()
 	return (
-		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem]">
+		<main className="bg-white shadow-custom p-[1rem] h-[100%] pb-[5rem] mx-[2px]">
 			<div className="flex items-center md:gap-[2rem] gap-[1rem] pb-[2rem]">
 				<div
 					onClick={() => navigate(-1)}

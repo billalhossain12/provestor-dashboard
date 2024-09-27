@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function PropertyViewPanel() {
 	return (
-		<main>
+		<main className='mx-[2px]'>
 			<Outlet />
 		</main>
 	);

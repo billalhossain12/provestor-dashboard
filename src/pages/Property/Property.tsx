@@ -5,7 +5,7 @@ import PropertyList from "./PropertyList/PropertyList";
 
 export default function Property() {
   return (
-    <main>
+    <main className="mx-[2px]">
       <div className='flex items-center justify-between mb-[2rem]'>
 				<h3 className="text-[1.25rem] font-medium">Property</h3>
 				<Link to="add-porperty/property-details">
