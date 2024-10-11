@@ -38,19 +38,16 @@ import BeneficiaryListTab from '../pages/Investors/Tabs/BeneficiaryListTab';
 import BankAccountListTab from '../pages/Investors/Tabs/BankAccountListTab';
 import HistoryListTab from '../pages/Investors/Tabs/HistoryListTab';
 import Profile from '../pages/Profile/Profile';
+import Login from '../pages/Auth/Login';
 
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/admin',
 		element: <MainLayout />,
 		errorElement: <NotFound />,
 		children: [
 			{
 				path: '',
-				element: <Dashboard />,
-			},
-			{
-				path: 'admin',
 				element: <Dashboard />,
 			},
 			{
@@ -215,4 +212,9 @@ export const router = createBrowserRouter([
 			},
 		],
 	},
+
+	{
+		path:"/",
+		element:<Login/>
+	}
 ]);
