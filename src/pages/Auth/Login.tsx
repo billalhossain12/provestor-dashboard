@@ -1,12 +1,22 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Error from '../../components/UI/Error';
 
 export default function Login() {
+	const navigate = useNavigate();
 	const [isVisible, setIsVisible] = useState(false);
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [showError, setShowError] = useState(false);
 
 	const handleLogin = (e: FormEvent) => {
 		e.preventDefault();
+		if (!email || !password) {
+			return setShowError(true);
+		}
 		alert('Submit Form Data');
+		navigate('/admin');
 	};
 	return (
 		<section className="bg-[url('/map-frame.svg')] bg-contain h-screen flex justify-center items-center mx-2">
@@ -27,12 +37,14 @@ export default function Login() {
 								type="email"
 								id="email"
 								placeholder="example@gmail.com"
+								onChange={e => setEmail(e.target.value)}
 							/>
 							<Icon
 								className="absolute left-3 top-[14px]"
 								icon="ic:round-email"
 							/>
 						</div>
+						{showError && !email && <Error message="Email is required" />}
 					</div>
 					<div>
 						<label className="block font-semibold mb-1" htmlFor="password">
@@ -43,6 +55,7 @@ export default function Login() {
 								className="outline-none border-[1px] px-[12px] py-2 w-full duration-300 border-[#D9D9D9] pl-8"
 								type={isVisible ? 'text' : 'password'}
 								id="password"
+								onChange={e => setPassword(e.target.value)}
 							/>
 							<Icon
 								className="absolute left-3 top-[14px]"
@@ -62,6 +75,9 @@ export default function Login() {
 								/>
 							)}
 						</div>
+						{showError && !password && (
+							<Error message="Password is required" />
+						)}
 					</div>
 					<h3 className="font-bold text-[14px] text-right my-2">
 						Forgot Password?
