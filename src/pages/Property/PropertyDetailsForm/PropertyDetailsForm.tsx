@@ -6,7 +6,8 @@ import ProvestorInput from '../../../components/Form/ProvestorInput';
 import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import ProvestorTextArea from '../../../components/Form/ProvestorTextArea';
 import AmenityCustomSelector from './AmenityCustomSelector/AmenityCustomSelector';
-import { useAppSelector } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { setActiveStep } from '../../../redux/slices/formStepperSlice';
 
 const propertyTypeOptions = [
 	{
@@ -21,6 +22,12 @@ const propertyTypeOptions = [
 
 export default function PropertyDetailsForm() {
 	const navigate = useNavigate();
+
+	const dispatch = useAppDispatch()
+	const {activeStep, isLastStep} = useAppSelector(state => state.formStepper)
+	const handleNext = () => !isLastStep && dispatch(setActiveStep(activeStep+1));
+
+
 	const { amenities } = useAppSelector(state => state.amenitySelect);
 	const selectedAmenities = amenities
 		.filter(item => item.selected)
@@ -28,7 +35,8 @@ export default function PropertyDetailsForm() {
 
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log({ ...data, amenities: selectedAmenities });
-		navigate('/property/add-porperty/financial-informations');
+		handleNext()
+		navigate('/admin/property/add-porperty/financial-informations');
 	};
 	return (
 		<main>

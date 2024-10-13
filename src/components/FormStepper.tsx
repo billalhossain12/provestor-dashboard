@@ -1,21 +1,21 @@
-import React from 'react';
-import { Stepper, Step, Button, Typography } from '@material-tailwind/react';
+import { Stepper, Step, Typography } from '@material-tailwind/react';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import {
+	setIsFirstStep,
+	setIsLastStep,
+} from '../redux/slices/formStepperSlice';
 
 export function FormStepper() {
-	const [activeStep, setActiveStep] = React.useState(0);
-	const [isLastStep, setIsLastStep] = React.useState(false);
-	const [isFirstStep, setIsFirstStep] = React.useState(false);
-
-	const handleNext = () => !isLastStep && setActiveStep(cur => cur + 1);
-	const handlePrev = () => !isFirstStep && setActiveStep(cur => cur - 1);
+	const dispatch = useAppDispatch();
+	const { activeStep } = useAppSelector(state => state.formStepper);
 
 	return (
-		<div className="w-full px-14 py-2">
+		<div className="w-full px-14 py-2 mb-[5.5rem]">
 			<Stepper
 				activeStep={activeStep}
-				isLastStep={value => setIsLastStep(value)}
-				isFirstStep={value => setIsFirstStep(value)}
+				isLastStep={value => dispatch(setIsLastStep(value))}
+				isFirstStep={value => dispatch(setIsFirstStep(value))}
 				activeLineClassName="bg-primary"
 			>
 				<Step
@@ -100,15 +100,6 @@ export function FormStepper() {
 					</div>
 				</Step>
 			</Stepper>
-
-			<div className="mt-32 flex justify-between">
-				<Button onClick={handlePrev} disabled={isFirstStep}>
-					Prev
-				</Button>
-				<Button onClick={handleNext} disabled={isLastStep}>
-					Next
-				</Button>
-			</div>
 		</div>
 	);
 }

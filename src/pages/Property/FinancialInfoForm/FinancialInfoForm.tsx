@@ -3,13 +3,30 @@ import { useNavigate } from 'react-router-dom';
 import { FieldValues, SubmitHandler } from 'react-hook-form';
 import ProvestorInputWithLeftIcon from '../../../components/Form/ProvestorInputWithLeftIcon';
 import ProvestorInput from '../../../components/Form/ProvestorInput';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { setActiveStep } from '../../../redux/slices/formStepperSlice';
 
 export default function FinancialInfoForm() {
 	const navigate = useNavigate();
+
+	const dispatch = useAppDispatch();
+	const { activeStep, isLastStep, isFirstStep } = useAppSelector(
+		state => state.formStepper
+	);
+	const handleNext = () =>
+		!isLastStep && dispatch(setActiveStep(activeStep + 1));
+
+	const handlePrev = () => {
+		navigate(-1);
+		return !isFirstStep && dispatch(setActiveStep(activeStep - 1));
+	};
+
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
-		navigate('/property/add-porperty/risk-and-financing-details');
+		handleNext();
+		navigate('/admin/property/add-porperty/risk-and-financing-details');
 	};
+	
 	return (
 		<main>
 			<ProvestorForm onSubmit={handleSubmit}>
@@ -44,10 +61,17 @@ export default function FinancialInfoForm() {
 					/>
 				</div>
 				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[1.5rem] gap-5">
-					<button onClick={()=>navigate(-1)} type='button' className="hover:bg-primary text-black hover:text-white border-[1px] border-[#0E0E0E] hover:border-primary duration-200 text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center">
+					<button
+						onClick={handlePrev}
+						type="button"
+						className="hover:bg-primary text-black hover:text-white border-[1px] border-[#0E0E0E] hover:border-primary duration-200 text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
+					>
 						Previous
 					</button>
-					<button type='submit' className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center">
+					<button
+						type="submit"
+						className="bg-primary text-white text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
+					>
 						Nex
 					</button>
 				</div>

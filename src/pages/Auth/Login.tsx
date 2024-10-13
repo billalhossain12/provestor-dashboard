@@ -15,7 +15,11 @@ export default function Login() {
 		if (!email || !password) {
 			return setShowError(true);
 		}
-		alert('Submit Form Data');
+		const loginData = {
+            email,
+            password
+        }
+        console.log("Form Data to Login========> ", loginData)
 		navigate('/admin');
 	};
 	return (

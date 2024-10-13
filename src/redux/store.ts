@@ -7,6 +7,7 @@ import { baseApi } from './api/baseApi';
 import mobileSidebarSlice from './slices/mobileSidebarSlice';
 import amenitySelectSlice from './slices/amenitySelectSlice';
 import propertyFileUploadSlice from './slices/propertyFileUploadSlice';
+import formStepperSlice from './slices/formStepperSlice';
 
 const persistConfig = {
 	key: 'root',
@@ -21,6 +22,7 @@ export const store = configureStore({
 		mobileSidebar: mobileSidebarSlice,
 		amenitySelect: amenitySelectSlice,
 		propertyFileUpload: propertyFileUploadSlice,
+		formStepper: formStepperSlice,
 		[baseApi.reducerPath]: baseApi.reducer,
 	},
 	middleware: getDefaultMiddleware =>

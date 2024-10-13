@@ -4,6 +4,8 @@ import ProvestorForm from '../../../components/Form/ProvestorForm';
 import ProvestorSelect from '../../../components/Form/ProvestorSelect';
 import ProvestorInputWithLeftIcon from '../../../components/Form/ProvestorInputWithLeftIcon';
 import ProvestorInput from '../../../components/Form/ProvestorInput';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import { setActiveStep } from '../../../redux/slices/formStepperSlice';
 
 const riskScaleOptions = [
 	{ label: 'Low', value: 'Low' },
@@ -21,9 +23,20 @@ const strategicFinancingOptions = [
 
 export default function RiskAndFinancingForm() {
 	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
+	const { activeStep, isLastStep, isFirstStep } = useAppSelector(
+		state => state.formStepper
+	);
+	const handleNext = () =>
+		!isLastStep && dispatch(setActiveStep(activeStep + 1));
+	const handlePrev = () => {
+		!isFirstStep && dispatch(setActiveStep(activeStep - 1));
+		navigate(-1);
+	};
 	const handleSubmit: SubmitHandler<FieldValues> = data => {
 		console.log(data);
-		navigate('/property/add-porperty/documents');
+		handleNext()
+		navigate('/admin/property/add-porperty/documents');
 	};
 	return (
 		<main>
@@ -136,7 +149,7 @@ export default function RiskAndFinancingForm() {
 
 				<div className="md:col-span-3 flex justify-end md:mt-[3rem] mt-[1.5rem] gap-5">
 					<button
-						onClick={() => navigate(-1)}
+						onClick={handlePrev}
 						type="button"
 						className="hover:bg-primary text-black hover:text-white border-[1px] border-[#0E0E0E] hover:border-primary duration-200 text-[18px] font-bold py-2 md:w-[150px] w-[100px] text-center"
 					>
